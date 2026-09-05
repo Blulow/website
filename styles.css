@@ -1,0 +1,47 @@
+:root {
+    --bg-col: #1e2d44;
+    --txt-col: #fdfcdb;
+    --nav-col: #1316303f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-col);
+    color: var(--txt-col);
+    width: 100%;
+    height: 100vh;
+}
+
+#navbar {
+    z-index: 10;
+    background-color: var(--nav-col);
+    position: fixed;
+    width: 100%;
+    animation: navbar-in 0.7s ease-out forwards;
+}
+
+#navbar ul {
+    padding: 1rem 2rem;
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+#navbar a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+@keyframes navbar-in {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
