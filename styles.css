@@ -2,6 +2,8 @@
     --bg-col: #1e2d44;
     --txt-col: #fdfcdb;
     --nav-col: #1316303f;
+    --sec-bg-col: #404f1e;
+    --sec-head-col: #222816;
 }
 
 * {
@@ -68,4 +70,36 @@ body {
     to {
         height: 70vh;
     }
+}
+
+/* .section {
+    background-color: #317580;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.section .section-title {
+    font-size: 5rem;
+}
+
+.section .section-text {
+    font-size: 1rem;
+} */
+
+.section {
+    background-color: var(--sec-bg-col);
+}
+
+.section .section-title {
+    background-color: var(--sec-head-col);
+    font-size: 4rem;
+    text-align: center;
+}
+
+.section .section-text {
+    padding: 1rem 5rem;
+    font-size: 1rem;
+    text-align: center;
 }
