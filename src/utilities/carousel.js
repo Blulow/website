@@ -93,10 +93,11 @@ class Carousel extends HTMLElement {
             e.preventDefault();
             e.stopPropagation();
 
+            this.scrollSnapping = false;
             this.targetScrollLeft += e.deltaY;
             this.targetScrollLeft = Math.min(Math.max(this.targetScrollLeft, 0), this.track.scrollWidth - this.track.clientWidth);
             if (this.targetScrollLeft <= 0 || this.targetScrollLeft >= this.track.scrollWidth - this.track.clientWidth) return;
-
+            
             if (this.animationFrame == null) this.animationFrame = requestAnimationFrame(this.update);
         }, { passive: false });
 
@@ -104,7 +105,7 @@ class Carousel extends HTMLElement {
     }
 
     update() {
-        const center = (this.track.clientLeft + this.track.clientWidth) / 2;
+        const center = this.track.getBoundingClientRect().left + this.track.getBoundingClientRect().width / 2;
         const distance = this.targetScrollLeft - this.track.scrollLeft;
         
         if (Math.abs(this.lastScrollLeft - this.track.scrollLeft) > this.ogTrackWidth + this.gapDistance) {
@@ -118,7 +119,7 @@ class Carousel extends HTMLElement {
         }
         
         if (this.scrollSnapping) {
-            const snapDistance = (this.closestChild.getBoundingClientRect().left + this.closestChild.getBoundingClientRect().width) / 2 - center;
+            const snapDistance = this.closestChild.getBoundingClientRect().left + this.closestChild.getBoundingClientRect().width / 2 - center;
             this.track.scrollLeft += snapDistance * 0.1;
             
             if (Math.abs(snapDistance * 0.1) < 1) {
@@ -130,10 +131,10 @@ class Carousel extends HTMLElement {
         } else {
             if (Math.abs(distance * 0.1) < 1) {
                 this.track.scrollLeft = this.targetScrollLeft;
-                this.closestChild = this.trackChildren.reduce((p, e) => {
-                    const childCenter = (e.getBoundingClientRect().left + e.getBoundingClientRect().width) / 2;
-                    const prevChildCenter = (p.getBoundingClientRect().left + p.getBoundingClientRect().width) / 2;
-                    return Math.abs(childCenter - center) < Math.abs(prevChildCenter - center) ? e : p;
+                this.closestChild = this.trackChildren.reduce((c, e) => {
+                    const childCenter = e.getBoundingClientRect().left + e.getBoundingClientRect().width / 2;
+                    const closestChildCenter = c.getBoundingClientRect().left + c.getBoundingClientRect().width / 2;
+                    return Math.abs(childCenter - center) < Math.abs(closestChildCenter - center) ? e : c;
                 });
                 this.scrollSnapping = true;
             } else {
