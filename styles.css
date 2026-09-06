@@ -23,7 +23,7 @@ body {
     background-color: var(--nav-col);
     position: fixed;
     width: 100%;
-    animation: navbar-in 0.7s ease-out forwards;
+    animation: navbar-in 0.7s ease-out 0.2s forwards;
 }
 
 #navbar ul {
@@ -60,7 +60,7 @@ body {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    animation: introvid-in 0.7s ease-out forwards;
+    animation: introvid-in 0.7s ease-out 0.2s forwards;
 }
 
 @keyframes introvid-in {
@@ -72,34 +72,27 @@ body {
     }
 }
 
-/* .section {
-    background-color: #317580;
-    padding: 1rem 5rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.section .section-title {
-    font-size: 5rem;
-}
-
-.section .section-text {
-    font-size: 1rem;
-} */
-
 .section {
     background-color: var(--sec-bg-col);
 }
 
-.section .section-title {
+.section-title {
     background-color: var(--sec-head-col);
     font-size: 4rem;
     text-align: center;
 }
 
-.section .section-text {
+.section-content {
     padding: 1rem 5rem;
     font-size: 1rem;
+}
+
+.section-text {    
     text-align: center;
+}
+
+.section-carousel {
+    /* --bg: orange; */
+    width: 100%;
+    height: 30rem;
 }

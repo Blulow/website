@@ -5,27 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="src/utilities/carousel.js" defer></script>
 </head>
 <body>
-    <nav id="navbar" aria-label="Navigation Menu">
-        <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">About</a></li>
-        </ul>
-    </nav>
-    <div id="container">
-        <video class="intro-vid" autoplay loop playsinline>
+    <header>
+        <nav id="navbar" aria-label="Navigation Menu">
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="container">
+
+        <video class="intro-vid" autoplay loop muted playsinline>
             <source src="" type="video/mp4">
-            Intro Video for Blulow
+            Intro video for Blulow
         </video>
-        <div class="section about-me">
+
+        <section class="section about-me">
             <div class="section-container">    
-                <div class="section-title">About Me</div>
-                <div class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <h1 class="section-title">About Me</h1>
+                <div class="section-content">
+                    <p class="section-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+        
+        <section class="section projects">
+            <div class="section-container">    
+                <h1 class="section-title">Projects</h1>
+                <div class="section-content">
+                    <x-carousel class="section-carousel">
+                        <img src="assets\images\Blulow.jpg" alt="">
+                        <img src="assets\images\Blulow.jpg" alt="">
+                    </x-carousel>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
     <script src="src/main.js"></script>
 </body>
 </html>
