@@ -65,39 +65,42 @@ class Carousel extends HTMLElement {
     }
 
     connectedCallback() {
+        //set original track children
         const ogTrackChildren = this.trackChildren;
         
         const container = this.shadowRoot.querySelector(".carousel-container");
         
+        // set original track width
         let trackWidth = this.ogTrackWidth;
-        if (trackWidth < container.clientWidth * 3) {
-            while (trackWidth < container.clientWidth * 3 || this.trackChildren.length / ogTrackChildren.length < 4) {
-                ogTrackChildren.forEach(e => this.appendChild(e.cloneNode(true)));
-                trackWidth = this.track.scrollWidth;
-                this.trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
-            }
-        } else {
-            ogTrackChildren.forEach(e => {
-                this.appendChild(e.cloneNode(true));
-                this.appendChild(e.cloneNode(true));
-            });
+        // accumulate track width until hit all criteria:
+        // track width >= 3 * container width
+        // track duplicate >= 4
+        while (trackWidth < container.clientWidth * 3 || this.trackChildren.length / ogTrackChildren.length < 4) {
+            ogTrackChildren.forEach(e => this.appendChild(e.cloneNode(true)));
             trackWidth = this.track.scrollWidth;
             this.trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
         }
         
+        // set initial scroll left for margin for scroll
         const nDuplicates = this.trackChildren.length / ogTrackChildren.length;
         this.track.scrollLeft = (this.ogTrackWidth + this.gapDistance) * Math.floor(nDuplicates / 2);
+        // set last scroll left (for looping)
         this.lastScrollLeft = this.track.scrollLeft;
+        // set target scroll left (for tweening)
         this.targetScrollLeft = this.track.scrollLeft;
         this.track.addEventListener("wheel", e => {
             e.preventDefault();
             e.stopPropagation();
 
+            // interrupt scroll snapping
             this.scrollSnapping = false;
+
+            // accumulate and clamp target scroll left
             this.targetScrollLeft += e.deltaY;
             this.targetScrollLeft = Math.min(Math.max(this.targetScrollLeft, 0), this.track.scrollWidth - this.track.clientWidth);
             if (this.targetScrollLeft <= 0 || this.targetScrollLeft >= this.track.scrollWidth - this.track.clientWidth) return;
             
+            // animate tween if scroll
             if (this.animationFrame == null) this.animationFrame = requestAnimationFrame(this.update);
         }, { passive: false });
 
@@ -105,9 +108,12 @@ class Carousel extends HTMLElement {
     }
 
     update() {
+        // get track client center (for snapping)
         const center = this.track.getBoundingClientRect().left + this.track.getBoundingClientRect().width / 2;
+        // get tween distance
         const distance = this.targetScrollLeft - this.track.scrollLeft;
         
+        // looping (by moving actual and target scroll left up or down a cycle)
         if (Math.abs(this.lastScrollLeft - this.track.scrollLeft) > this.ogTrackWidth + this.gapDistance) {
             if (this.lastScrollLeft < this.track.scrollLeft) {
                 this.track.scrollLeft -= this.ogTrackWidth + this.gapDistance;
@@ -119,9 +125,13 @@ class Carousel extends HTMLElement {
         }
         
         if (this.scrollSnapping) {
+            // snapping
+
+            // accumulate snap distance (closest child x - center x)
             const snapDistance = this.closestChild.getBoundingClientRect().left + this.closestChild.getBoundingClientRect().width / 2 - center;
             this.track.scrollLeft += snapDistance * 0.1;
             
+            // finish snapping
             if (Math.abs(snapDistance * 0.1) < 1) {
                 this.scrollSnapping = false;
                 this.lastScrollLeft = this.track.scrollLeft;
@@ -129,15 +139,22 @@ class Carousel extends HTMLElement {
                 return;
             }
         } else {
+            // scrolling
+
             if (Math.abs(distance * 0.1) < 1) {
+                // scroll finish (when target and actual get close enough [because target and actual can miss])
+
                 this.track.scrollLeft = this.targetScrollLeft;
+                // get closest child to center
                 this.closestChild = this.trackChildren.reduce((c, e) => {
                     const childCenter = e.getBoundingClientRect().left + e.getBoundingClientRect().width / 2;
                     const closestChildCenter = c.getBoundingClientRect().left + c.getBoundingClientRect().width / 2;
                     return Math.abs(childCenter - center) < Math.abs(closestChildCenter - center) ? e : c;
                 });
+                // enable snapping
                 this.scrollSnapping = true;
             } else {
+                // tween scrolling (from actual to target)
                 this.track.scrollLeft += distance * 0.1;
             }
         }
