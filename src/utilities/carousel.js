@@ -61,6 +61,7 @@ class Carousel extends HTMLElement {
         this.targetScrollLeft = 0;
         this.lastScrollLeft = 0;
         this.scrollSnapping = false;
+        this.closestChild = null;
     }
 
     connectedCallback() {
@@ -96,18 +97,15 @@ class Carousel extends HTMLElement {
             this.targetScrollLeft = Math.min(Math.max(this.targetScrollLeft, 0), this.track.scrollWidth - this.track.clientWidth);
             if (this.targetScrollLeft <= 0 || this.targetScrollLeft >= this.track.scrollWidth - this.track.clientWidth) return;
 
-            if (this.animationFrame == null) this.animationFrame = requestAnimationFrame(this.update)
+            if (this.animationFrame == null) this.animationFrame = requestAnimationFrame(this.update);
         }, { passive: false });
+
+        this.animationFrame = requestAnimationFrame(this.update);
     }
 
     update() {
+        const center = (this.track.clientLeft + this.track.clientWidth) / 2;
         const distance = this.targetScrollLeft - this.track.scrollLeft;
-        
-        if (Math.abs(distance * 0.1) < 1) {
-            this.track.scrollLeft = this.targetScrollLeft;
-            this.animationFrame = null;
-            this.scrollSnapping = true;
-        }
         
         if (Math.abs(this.lastScrollLeft - this.track.scrollLeft) > this.ogTrackWidth + this.gapDistance) {
             if (this.lastScrollLeft < this.track.scrollLeft) {
@@ -118,15 +116,30 @@ class Carousel extends HTMLElement {
                 this.targetScrollLeft += this.ogTrackWidth + this.gapDistance;
             }
         }
-
-        if (this.scrollSnapping) {
-            console.log(this.trackChildren)
-            this.scrollSnapping = false;
-            this.lastScrollLeft = this.track.scrollLeft;
-            return;
-        }
         
-        this.track.scrollLeft += distance * 0.1;
+        if (this.scrollSnapping) {
+            const snapDistance = (this.closestChild.getBoundingClientRect().left + this.closestChild.getBoundingClientRect().width) / 2 - center;
+            this.track.scrollLeft += snapDistance * 0.1;
+            
+            if (Math.abs(snapDistance * 0.1) < 1) {
+                this.scrollSnapping = false;
+                this.lastScrollLeft = this.track.scrollLeft;
+                this.animationFrame = null;
+                return;
+            }
+        } else {
+            if (Math.abs(distance * 0.1) < 1) {
+                this.track.scrollLeft = this.targetScrollLeft;
+                this.closestChild = this.trackChildren.reduce((p, e) => {
+                    const childCenter = (e.getBoundingClientRect().left + e.getBoundingClientRect().width) / 2;
+                    const prevChildCenter = (p.getBoundingClientRect().left + p.getBoundingClientRect().width) / 2;
+                    return Math.abs(childCenter - center) < Math.abs(prevChildCenter - center) ? e : p;
+                });
+                this.scrollSnapping = true;
+            } else {
+                this.track.scrollLeft += distance * 0.1;
+            }
+        }
 
         this.animationFrame = requestAnimationFrame(this.update);
     }
