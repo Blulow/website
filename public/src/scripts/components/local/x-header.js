@@ -8,8 +8,9 @@ class XHeader extends HTMLElement {
             <header>
                 <x-navbar id="navbar" aria-label="Navigation Menu">
                     <a class="nav-links" href="/public/index.html">Home</a>
+                    <a class="nav-links" href="/public/index.html#about-me">About</a>
+                    <a class="nav-links" href="/public/index.html#contact">Contact</a>
                     <a class="nav-links" href="/public/pages/projects.html">Projects</a>
-                    <a class="nav-links" href="">Lorem</a>
                 </x-navbar>
             </header>
         `;
