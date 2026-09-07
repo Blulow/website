@@ -34,11 +34,12 @@ class Carousel extends HTMLElement {
                     display: flex;
                     justify-items: center;
                     align-items: center;
-                    padding: 1rem 5rem;
+                    padding: 5% 10%;
                     box-sizing: border-box;
                 }
                 
                 .carousel-track {
+                    height: 90%;
                     flex: 1 1 auto;
                     display: flex;
                     gap: var(--gap);
@@ -147,6 +148,17 @@ class Carousel extends HTMLElement {
             // animate tween if scroll
             if (this.#animationFrame == null) this.#animationFrame = requestAnimationFrame(this.#update);
         }, { passive: false });
+        
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                console.log("e");
+                this.#scrollSnapping = false;
+                this.#targetScrollLeft = this.#track.scrollLeft;
+                this.#animationFrame = requestAnimationFrame(this.#update);
+            }, 250);
+        });
 
         this.#animationFrame = requestAnimationFrame(this.#update);
     }
@@ -169,6 +181,7 @@ class Carousel extends HTMLElement {
         }
         
         if (this.#scrollSnapping) {
+            console.log("s");
             // snapping
 
             // accumulate snap distance (closest child x - center x)
