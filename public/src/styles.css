@@ -79,6 +79,22 @@ body {
     }
 }
 
+#projects {
+    --x-justify-content: unset;
+    --x-align-items: center;
+    --x-flex-direction: column;
+}
+
+.projects-link {
+    width: 15rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: #dddddd;
+    border: 1px solid #000000;
+}
+
 /* projects */
 
 .projects-label {

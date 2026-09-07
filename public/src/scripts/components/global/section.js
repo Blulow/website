@@ -13,6 +13,7 @@ class Section extends HTMLElement {
                     --x-sec-head-col: unset;
                     --x-title-font-size: unset;
                     --x-text-align: unset;
+                    --x-flex-direction: unset;
                     --x-content-padding-top: unset;
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
@@ -30,6 +31,7 @@ class Section extends HTMLElement {
 
                 .section-content {
                     display: flex;
+                    flex-direction: var(--x-flex-direction);
                     justify-content: var(--x-justify-content);
                     align-items: var(--x-align-items);
                     padding: var(--x-content-padding-top) var(--x-content-padding-right) var(--x-content-padding-bottom) var(--x-content-padding-left);
