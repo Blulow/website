@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/styles.css">
+    <script src="src/scripts/components/navbar.js" defer></script>
     <script src="src/scripts/components/carousel.js" defer></script>
 </head>
 <body>
     <header>
-        <nav id="navbar" aria-label="Navigation Menu">
-            <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">About</a></li>
-            </ul>
-        </nav>
+        <x-navbar id="navbar" aria-label="Navigation Menu">
+            <a class="nav-links" href="">About</a>
+            <a class="nav-links" href="">About</a>
+            <a class="nav-links" href="">About</a>
+        </x-navbar>
     </header>
 
     <main id="container">

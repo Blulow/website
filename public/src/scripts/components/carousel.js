@@ -19,13 +19,13 @@ class Carousel extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    --bg: #3498db;
-                    --gap: 5%;
-                    --left-arrow-image: none;
-                    --right-arrow-image: none;
+                    --x-bg: #3498db;
+                    --x-gap: 5%;
+                    --x-left-arrow-image: none;
+                    --x-right-arrow-image: none;
                     
                     display: block;
-                    background-color: var(--bg);
+                    background-color: var(--x-bg);
                 }
 
                 .carousel-container {
@@ -42,7 +42,7 @@ class Carousel extends HTMLElement {
                     height: 90%;
                     flex: 1 1 auto;
                     display: flex;
-                    gap: var(--gap);
+                    gap: var(--x-gap);
                     overflow-x: auto;
 
                     -ms-overflow-style: none;
@@ -59,7 +59,7 @@ class Carousel extends HTMLElement {
                 }
 
                 .carousel-left-arrow {
-                    background-image: var(--left-arrow-image);
+                    background-image: var(--x-left-arrow-image);
                     background-size: 100%;
                     width: 5%;
                     aspect-ratio: 0.25;
@@ -68,7 +68,7 @@ class Carousel extends HTMLElement {
                 }
                 
                 .carousel-right-arrow {
-                    background-image: var(--right-arrow-image);
+                    background-image: var(--x-right-arrow-image);
                     background-size: 100%;
                     width: 5%;
                     aspect-ratio: 0.25;
@@ -153,7 +153,6 @@ class Carousel extends HTMLElement {
         window.addEventListener("resize", () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                console.log("e");
                 this.#scrollSnapping = false;
                 this.#targetScrollLeft = this.#track.scrollLeft;
                 this.#animationFrame = requestAnimationFrame(this.#update);
@@ -181,7 +180,6 @@ class Carousel extends HTMLElement {
         }
         
         if (this.#scrollSnapping) {
-            console.log("s");
             // snapping
 
             // accumulate snap distance (closest child x - center x)
@@ -262,4 +260,4 @@ class Carousel extends HTMLElement {
     }
 }
 
-customElements.define('x-carousel', Carousel);
+customElements.define("x-carousel", Carousel);

@@ -19,24 +19,11 @@ body {
 }
 
 #navbar {
-    z-index: 10;
-    background-color: var(--nav-col);
-    position: fixed;
+    z-index: 1;
     width: 100%;
+    position: fixed;
+    --x-nav-col: var(--nav-col);
     animation: navbar-in 0.7s ease-out 0.2s forwards;
-}
-
-#navbar ul {
-    padding: 1rem 2rem;
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-}
-
-#navbar a {
-    color: inherit;
-    text-decoration: none;
-    font-size: 1.5rem;
 }
 
 @keyframes navbar-in {
@@ -46,6 +33,12 @@ body {
     to {
         transform: translateY(0);
     }
+}
+
+.nav-links {
+    color: var(--txt-col);
+    text-decoration: none;
+    font-size: 2rem;
 }
 
 #container {
@@ -93,9 +86,9 @@ body {
 }
 
 .section-carousel {
-    /* --bg: orange; */
+    /* --x-bg: orange; */
     width: 100%;
     height: 30vw;
-    /* --left-arrow-image: url("assets/images/Blulow.jpg");
-    --right-arrow-image: url("assets/images/Blulow.jpg"); */
+    /* --x-left-arrow-image: url("assets/images/Blulow.jpg");
+    --x-right-arrow-image: url("assets/images/Blulow.jpg"); */
 }
