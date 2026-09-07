@@ -18,6 +18,14 @@ body {
     height: 100vh;
 }
 
+#container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* navbar */
+
 #navbar {
     z-index: 1;
     width: 100%;
@@ -41,11 +49,7 @@ body {
     font-size: 2rem;
 }
 
-#container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+/* index */
 
 .intro-vid {
     display: block;
