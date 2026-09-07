@@ -5,13 +5,11 @@ class Navbar extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    --x-nav-col: #1316303f;
-                    --x-padding-top: 1rem;
-                    --x-padding-right: 2rem;
-                    --x-padding-bottom: 1rem;
-                    --x-padding-left: 2rem;
-                    --x-gap: 3rem;
-                    background-color: var(--x-nav-col);
+                    --x-padding-top: unset;
+                    --x-padding-right: unset;
+                    --x-padding-bottom: unset;
+                    --x-padding-left: unset;
+                    --x-gap: unset;
                 }
 
                 ul {

@@ -10,18 +10,18 @@ class Section extends HTMLElement {
                 }
 
                 :host {
-                    --x-sec-head-col: #222816;
-                    --x-title-font-size: 4rem;
-                    --x-text-align: center;
-                    --x-content-padding-top: 1rem;
-                    --x-content-padding-right: 5rem;
-                    --x-content-padding-bottom: 1rem;
-                    --x-content-padding-left: 5rem;
-                    --x-text-font-size: 1.2rem;
-                    --x-text-padding-top: 1rem;
-                    --x-text-padding-right: 5rem;
-                    --x-text-padding-bottom: 1rem;
-                    --x-text-padding-left: 5rem;
+                    --x-sec-head-col: unset;
+                    --x-title-font-size: unset;
+                    --x-text-align: unset;
+                    --x-content-padding-top: unset;
+                    --x-content-padding-right: unset;
+                    --x-content-padding-bottom: unset;
+                    --x-content-padding-left: unset;
+                    --x-text-font-size: unset;
+                    --x-text-padding-top: unset;
+                    --x-text-padding-right: unset;
+                    --x-text-padding-bottom: unset;
+                    --x-text-padding-left: unset;
 
                     display: block;
                 }

@@ -30,7 +30,13 @@ body {
     z-index: 1;
     width: 100%;
     position: fixed;
-    --x-nav-col: var(--nav-col);
+    background-color: var(--nav-col);
+    --x-padding-top: 1rem;
+    --x-padding-right: 2rem;
+    --x-padding-bottom: 1rem;
+    --x-padding-left: 2rem;
+    --x-gap: 3rem;
+    transform: translateY(-100%);
     animation: navbar-in 0.7s ease-out 0.2s forwards;
 }
 
@@ -89,6 +95,10 @@ body {
     /* --x-bg: orange; */
     width: 100%;
     height: 30vw;
+    --x-bg: #3498db;
+    --x-gap: 5%;
+    --x-left-arrow-image: none;
+    --x-right-arrow-image: none;
     /* --x-left-arrow-image: url("assets/images/Blulow.jpg");
     --x-right-arrow-image: url("assets/images/Blulow.jpg"); */
 }

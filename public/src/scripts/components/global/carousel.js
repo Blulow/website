@@ -19,10 +19,10 @@ class Carousel extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    --x-bg: #3498db;
-                    --x-gap: 5%;
-                    --x-left-arrow-image: none;
-                    --x-right-arrow-image: none;
+                    --x-bg: unset;
+                    --x-gap: unset;
+                    --x-left-arrow-image: unset;
+                    --x-right-arrow-image: unset;
                     
                     display: block;
                     background-color: var(--x-bg);
