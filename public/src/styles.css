@@ -84,11 +84,13 @@ body {
     --x-content-padding-right: 5rem;
     --x-content-padding-bottom: 1rem;
     --x-content-padding-left: 5rem;
-    --x-text-font-size: 1.2rem;
-    --x-text-padding-top: 1rem;
-    --x-text-padding-right: 5rem;
-    --x-text-padding-bottom: 1rem;
-    --x-text-padding-left: 5rem;
+    --x-justify-content: center;
+}
+
+.section-text {    
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem 5rem;
 }
 
 .section-carousel {
@@ -101,6 +103,21 @@ body {
     --x-right-arrow-image: none;
     /* --x-left-arrow-image: url("assets/images/Blulow.jpg");
     --x-right-arrow-image: url("assets/images/Blulow.jpg"); */
+}
+
+.section-project-frame {
+    width: 30%;
+    --x-txt-col: var(--txt-col);
+    --x-text-align: left;
+    --x-font-size: 1.2rem;
+    --x-cover-image-padding-top: 1rem;
+    --x-cover-image-padding-right: 2rem;
+    --x-cover-image-padding-bottom: 1rem;
+    --x-cover-image-padding-left: 2rem;
+    --x-description-padding-top: 1rem;
+    --x-description-padding-right: 2rem;
+    --x-description-padding-bottom: 1rem;
+    --x-description-padding-left: 2rem;
 }
 
 /* projects */

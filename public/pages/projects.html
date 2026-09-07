@@ -6,9 +6,11 @@
     <title>Projects</title>
     <link rel="stylesheet" href="../src/styles.css">
     <script src="../src/scripts/components/global/navbar.js" defer></script>
+    <script src="../src/scripts/components/global/section.js" defer></script>
     <script src="../src/scripts/components/local/x-header.js" defer></script>
     <script src="../src/scripts/components/local/x-footer.js" defer></script>
     <script src="../src/scripts/components/local/x-nav-margin.js" defer></script>
+    <script src="../src/scripts/components/local/x-project-frame.js" defer></script>
 </head>
 <body>
     <x-header></x-header>
@@ -18,7 +20,14 @@
 
         <h1 class="projects-label">Projects</h1>
 
-        
+        <x-section class="section highlighted" x-title="Highlighted">
+            <x-project-frame class="section-project-frame" x-src="../assets/images/Blulow.jpg" x-alt="">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </x-project-frame>
+        </x-section>
+        <x-section class="section other" x-title="Other">
+
+        </x-section>
     </main>
 
     <x-footer></x-footer>

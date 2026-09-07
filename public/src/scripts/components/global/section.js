@@ -17,11 +17,7 @@ class Section extends HTMLElement {
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
                     --x-content-padding-left: unset;
-                    --x-text-font-size: unset;
-                    --x-text-padding-top: unset;
-                    --x-text-padding-right: unset;
-                    --x-text-padding-bottom: unset;
-                    --x-text-padding-left: unset;
+                    --x-align-items: unset;
 
                     display: block;
                 }
@@ -33,13 +29,10 @@ class Section extends HTMLElement {
                 }
 
                 .section-content {
+                    display: flex;
+                    justify-content: var(--x-justify-content);
+                    align-items: var(--x-align-items);
                     padding: var(--x-content-padding-top) var(--x-content-padding-right) var(--x-content-padding-bottom) var(--x-content-padding-left);
-                }
-
-                .section-text {    
-                    font-size: var(--x-text-font-size);
-                    text-align: var(--x-text-align);
-                    padding: var(--x-text-padding-top) var(--x-text-padding-right) var(--x-text-padding-bottom) var(--x-text-padding-left);
                 }
             </style>
             <div class="section-container">    
