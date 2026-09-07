@@ -71,22 +71,18 @@ body {
 
 .section {
     background-color: var(--sec-bg-col);
-}
-
-.section-title {
-    background-color: var(--sec-head-col);
-    font-size: 4rem;
-    text-align: center;
-}
-
-.section-content {
-    padding: 1rem 5rem;
-}
-
-.section-text {    
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 0 20rem;
+    --x-sec-head-col: var(--sec-head-col);
+    --x-title-font-size: 4rem;
+    --x-text-align: center;
+    --x-content-padding-top: 1rem;
+    --x-content-padding-right: 5rem;
+    --x-content-padding-bottom: 1rem;
+    --x-content-padding-left: 5rem;
+    --x-text-font-size: 1.2rem;
+    --x-text-padding-top: 1rem;
+    --x-text-padding-right: 5rem;
+    --x-text-padding-bottom: 1rem;
+    --x-text-padding-left: 5rem;
 }
 
 .section-carousel {
@@ -95,4 +91,12 @@ body {
     height: 30vw;
     /* --x-left-arrow-image: url("assets/images/Blulow.jpg");
     --x-right-arrow-image: url("assets/images/Blulow.jpg"); */
+}
+
+/* projects */
+
+.projects-label {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 5rem;
 }

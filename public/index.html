@@ -5,64 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/styles.css">
-    <script src="src/scripts/components/navbar.js" defer></script>
-    <script src="src/scripts/components/carousel.js" defer></script>
+    <script src="src/scripts/components/global/navbar.js" defer></script>
+    <script src="src/scripts/components/global/section.js" defer></script>
+    <script src="src/scripts/components/global/carousel.js" defer></script>
+    <script src="src/scripts/components/local/x-header.js" defer></script>
+    <script src="src/scripts/components/local/x-footer.js" defer></script>
 </head>
 <body>
-    <header>
-        <x-navbar id="navbar" aria-label="Navigation Menu">
-            <a class="nav-links" href="">About</a>
-            <a class="nav-links" href="">About</a>
-            <a class="nav-links" href="">About</a>
-        </x-navbar>
-    </header>
+    <x-header></x-header>
 
     <main id="container">
-
         <video class="intro-vid" autoplay loop muted playsinline>
             <source src="" type="video/mp4">
             Intro video for Blulow
         </video>
 
-        <section class="section about-me">
-            <div class="section-container">    
-                <h1 class="section-title">About Me</h1>
-                <div class="section-content">
-                    <p class="section-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section projects">
-            <div class="section-container">    
-                <h1 class="section-title">Projects</h1>
-                <div class="section-content">
-                    <x-carousel class="section-carousel">
-                        <img src="assets/images/Blulow.jpg" alt="">
-                        <img src="assets/images/Blulow.jpg" alt="">
-                    </x-carousel>
-                </div>
-            </div>
-        </section>
-
-        <section class="section contact">
-            <div class="section-container">    
-                <h1 class="section-title">Contact Me</h1>
-                <div class="section-content">
-                    <p class="section-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </section>
-
+        <x-section class="section about-me" x-title="About Me">
+            <p class="section-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </x-section>
+        <x-section class="section projects" x-title="Projects">
+            <x-carousel class="section-carousel">
+                <img src="assets/images/Blulow.jpg" alt="">
+                <img src="assets/images/Blulow.jpg" alt="">
+            </x-carousel>
+        </x-section>
+        <x-section class="section contact" x-title="Contact Me">
+            <p class="section-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </x-section>
     </main>
 
-    <footer>
-
-    </footer>
+    <x-footer></x-footer>
     <script src="src/scripts/main.js"></script>
 </body>
 </html>
