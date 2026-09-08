@@ -27,7 +27,7 @@ class ProjectFrame extends HTMLElement {
                     flex-direction: column;
                     align-items: center;
                     width: fit-content;
-                    min-width: 100%;
+                    min-width: fit-content;
                 }
 
                 .title {
@@ -48,7 +48,6 @@ class ProjectFrame extends HTMLElement {
                 
                 .description {
                     display: block;
-                    width: 100%;
                     box-sizing: border-box;
                     text-align: var(--x-text-align);
                     font-size: var(--x-font-size);

@@ -136,7 +136,7 @@ body {
 }
 
 .section-project-frame {
-    width: 30%;
+    /* width: 30%; */
     --x-txt-col: var(--txt-col);
     --x-text-align: left;
     --x-font-size: 1.2rem;
