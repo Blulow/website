@@ -145,9 +145,10 @@ body {
     --x-cover-image-padding-bottom: 1rem;
     --x-cover-image-padding-left: 2rem;
     --x-description-padding-top: 1rem;
-    --x-description-padding-right: 2rem;
+    --x-description-padding-right: 3rem;
     --x-description-padding-bottom: 1rem;
-    --x-description-padding-left: 2rem;
+    --x-description-padding-left: 3rem;
+    --x-title-font-size: 5rem;
 }
 
 .section-project-frame-container {
