@@ -5,6 +5,13 @@
     --sec-bg-col: #404f1e;
     --sec-head-col: #222816;
     --blog-col: #3d5d8c;
+
+    --default-font: "CasualWriterMono", Arial, sans-serif;
+}
+
+@font-face {
+    font-family: "CasualWriterMono";
+    src: url("/assets/fonts/CasualWriterMono.ttf");
 }
 
 * {
@@ -21,6 +28,7 @@ body {
     color: var(--txt-col);
     width: 100%;
     height: 100vh;
+    font-family: var(--default-font);
 }
 
 #container {
@@ -133,6 +141,10 @@ body {
     --x-sec-head-col: var(--sec-head-col);
     --x-title-font-size: 4rem;
     --x-text-align: center;
+    --x-title-padding-top: 1rem;
+    --x-title-padding-right: 0;
+    --x-title-padding-bottom: 1rem;
+    --x-title-padding-left: 0;
     --x-content-padding-top: 1rem;
     --x-content-padding-right: 5rem;
     --x-content-padding-bottom: 1rem;

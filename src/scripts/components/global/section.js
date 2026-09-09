@@ -14,6 +14,10 @@ class Section extends HTMLElement {
                     --x-title-font-size: unset;
                     --x-text-align: unset;
                     --x-flex-direction: unset;
+                    --x-title-padding-top: unset;
+                    --x-title-padding-right: unset;
+                    --x-title-padding-bottom: unset;
+                    --x-title-padding-left: unset;
                     --x-content-padding-top: unset;
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
@@ -27,6 +31,7 @@ class Section extends HTMLElement {
                     background-color: var(--sec-head-col);
                     font-size: var(--x-title-font-size);
                     text-align: var(--x-text-align);
+                    padding: var(--x-title-padding-top) var(--x-title-padding-right) var(--x-title-padding-bottom) var(--x-title-padding-left);
                 }
 
                 .section-content {
