@@ -91,8 +91,8 @@ class Carousel extends HTMLElement {
 
         this.#track = this.shadowRoot.querySelector(".carousel-track");
         this.#trackChildren = null;
+        this.#ogTrackWidth = 0;
         this.#ogTrackChildren = null;
-        this.#ogTrackWidth = this.#track.scrollWidth;
         this.#gapDistance = this.#track.clientWidth * parseFloat(getComputedStyle(this.#track).gap) / 100;
 
         this.#targetScrollLeft = 0;
@@ -123,6 +123,7 @@ class Carousel extends HTMLElement {
         const container = this.shadowRoot.querySelector(".carousel-container");
         
         // set original track width
+        this.#ogTrackWidth = this.#ogTrackChildren.reduce((total, e) => total + e.clientWidth, 0);
         let trackWidth = this.#ogTrackWidth;
         // accumulate track width until hit all criteria:
         // track width >= 3 * container width
@@ -258,12 +259,12 @@ class Carousel extends HTMLElement {
             this.#track.scrollLeft -= this.#ogTrackWidth + this.#gapDistance;
             this.#targetScrollLeft -= this.#ogTrackWidth + this.#gapDistance;
         }
+        console.log(this.#closestChildIdx, targetChildIdx, this.#originCycleIdx, this.#ogTrackChildren.length);
         // get target child and distance
         const targetChild = this.#trackChildren[targetChildIdx];
         const targetChildLeft = targetChild.getBoundingClientRect().left + targetChild.getBoundingClientRect().width / 2 - this.#track.getBoundingClientRect().left + this.#track.scrollLeft;
         // set target scroll left to previous child
         this.#targetScrollLeft = targetChildLeft - this.#track.clientWidth / 2;
-        console.log(targetChildLeft);
         this.#targetScrollLeft = Math.min(Math.max(this.#targetScrollLeft, 0), this.#track.scrollWidth - this.#track.clientWidth);
         if (this.#targetScrollLeft <= 0 || this.#targetScrollLeft >= this.#track.scrollWidth - this.#track.clientWidth) return;
         
