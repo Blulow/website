@@ -4,6 +4,7 @@
     --nav-col: #1316303f;
     --sec-bg-col: #404f1e;
     --sec-head-col: #222816;
+    --blog-col: #3d5d8c;
 }
 
 * {
@@ -101,6 +102,19 @@ body {
     padding: 2rem 0;
     text-align: center;
     font-size: 5rem;
+}
+
+/* blog */
+
+.blog {
+    width: 100%;
+    --x-blog-bg-col: var(--blog-col);
+    --x-blog-width: 80%;
+    --x-title-font-size: 8rem;
+    --x-title-padding-top: 2rem;
+    --x-title-padding-right: 0;
+    --x-title-padding-bottom: 2rem;
+    --x-title-padding-left: 0;
 }
 
 /* section */

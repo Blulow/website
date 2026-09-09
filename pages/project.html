@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
     <link rel="stylesheet" href="../src/style.css">
+    <script src="../src/scripts/components/global/navbar.js" defer></script>
+    <script src="../src/scripts/components/local/x-header.js" defer></script>
+    <script src="../src/scripts/components/local/x-footer.js" defer></script>
+    <script src="../src/scripts/components/local/x-nav-margin.js" defer></script>
+    <script type="module" src="../src/scripts/components/local/x-blog.js" defer></script>
 </head>
 <body>
+    <x-header></x-header>
+
+    <main id="container">
+        <x-nav-margin></x-nav-margin>
+
+        <div class="blog-container">
+            <x-blog class="blog" x-title="Title" x-content="/assets/data/project-blogs/test-project.md"></x-blog>
+        </div>
+    </main>
+
+    <x-footer></x-footer>
+
     <script type="module" src="/src/scripts/project.js"></script>
 </body>
 </html>

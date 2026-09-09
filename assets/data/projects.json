@@ -5,11 +5,11 @@
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "",
+        "content": "/assets/data/project-blogs/test-project.md",
         "type": "highlighted"
     },
     {
-        "id": "test-id",
+        "id": "test-id2",
         "title": "Test",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
@@ -18,7 +18,7 @@
         "type": "regular"
     },
     {
-        "id": "test-id",
+        "id": "test-id3",
         "title": "Test",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
@@ -27,7 +27,7 @@
         "type": "regular"
     },
     {
-        "id": "test-id",
+        "id": "test-id4",
         "title": "Test",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
@@ -36,7 +36,7 @@
         "type": "regular"
     },
     {
-        "id": "test-id",
+        "id": "test-id5",
         "title": "Test",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
@@ -45,7 +45,7 @@
         "type": "regular"
     },
     {
-        "id": "test-id",
+        "id": "test-id6",
         "title": "Test",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
