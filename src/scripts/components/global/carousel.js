@@ -53,7 +53,7 @@ class Carousel extends HTMLElement {
                     display: none;
                 }
                 
-                ::slotted(img) {
+                ::slotted(*) {
                     height: 100%;
                     width: auto;
                 }
@@ -90,7 +90,7 @@ class Carousel extends HTMLElement {
         this.#animationFrame = null;
 
         this.#track = this.shadowRoot.querySelector(".carousel-track");
-        this.#trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
+        this.#trackChildren = null;
         this.#ogTrackChildren = null;
         this.#ogTrackWidth = this.#track.scrollWidth;
         this.#gapDistance = this.#track.clientWidth * parseFloat(getComputedStyle(this.#track).gap) / 100;
@@ -101,15 +101,23 @@ class Carousel extends HTMLElement {
         this.#closestChild = null;
         this.#closestChildIdx = -1;
         this.#originCycleIdx = -1;
-    }
 
-    connectedCallback() {
-        this.#handleScrolling();
-        this.#handleButton();
+        // register child once (prevent infinite loop as #handleScrolling() duplicates children)
+        let slotChildAdded = false;
+        const slot = this.shadowRoot.querySelector("slot")
+        slot.addEventListener("slotchange", () => {
+            this.#trackChildren = slot.assignedElements();
+            if (this.#trackChildren.length > 0 && !slotChildAdded) {
+                this.#handleScrolling();
+                this.#handleButton();
+                slotChildAdded = true;
+            }
+        });
     }
 
     #handleScrolling() {
         //set original track children
+        this.#trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
         this.#ogTrackChildren = this.#trackChildren;
         
         const container = this.shadowRoot.querySelector(".carousel-container");
@@ -119,10 +127,13 @@ class Carousel extends HTMLElement {
         // accumulate track width until hit all criteria:
         // track width >= 3 * container width
         // track duplicate >= 4
+        let a = 0;
         while (trackWidth < container.clientWidth * 3 || this.#trackChildren.length / this.#ogTrackChildren.length < 4) {
+            if (a > 100) break;
             this.#ogTrackChildren.forEach(e => this.appendChild(e.cloneNode(true)));
             trackWidth = this.#track.scrollWidth;
             this.#trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
+            a++;
         }
         
         // set initial scroll left for margin for scroll
@@ -252,6 +263,7 @@ class Carousel extends HTMLElement {
         const targetChildLeft = targetChild.getBoundingClientRect().left + targetChild.getBoundingClientRect().width / 2 - this.#track.getBoundingClientRect().left + this.#track.scrollLeft;
         // set target scroll left to previous child
         this.#targetScrollLeft = targetChildLeft - this.#track.clientWidth / 2;
+        console.log(targetChildLeft);
         this.#targetScrollLeft = Math.min(Math.max(this.#targetScrollLeft, 0), this.#track.scrollWidth - this.#track.clientWidth);
         if (this.#targetScrollLeft <= 0 || this.#targetScrollLeft >= this.#track.scrollWidth - this.#track.clientWidth) return;
         

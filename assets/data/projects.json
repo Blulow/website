@@ -10,7 +10,7 @@
     },
     {
         "id": "test-id2",
-        "title": "Test",
+        "title": "Test2",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
@@ -19,7 +19,7 @@
     },
     {
         "id": "test-id3",
-        "title": "Test",
+        "title": "Test3",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
@@ -28,7 +28,7 @@
     },
     {
         "id": "test-id4",
-        "title": "Test",
+        "title": "Test4",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
@@ -37,7 +37,7 @@
     },
     {
         "id": "test-id5",
-        "title": "Test",
+        "title": "Test5",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
@@ -46,7 +46,7 @@
     },
     {
         "id": "test-id6",
-        "title": "Test",
+        "title": "Test6",
         "description": "Lorem ipsum dolor sit amet",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",

@@ -12,6 +12,7 @@
     <script src="src/scripts/components/local/x-footer.js" defer></script>
 </head>
 <body>
+    
     <x-header></x-header>
 
     <main id="container">
@@ -26,10 +27,7 @@
             </p>
         </x-section>
         <x-section id="projects" class="section" x-title="Projects">
-            <x-carousel class="section-carousel">
-                <img src="assets/images/Blulow.jpg" alt="">
-                <img src="assets/images/Blulow.jpg" alt="">
-            </x-carousel>
+            <x-carousel class="section-carousel"></x-carousel>
             <a class="projects-link" href="/pages/projects.html">All Projects</a>
         </x-section>
         <x-section id="contact" class="section" x-title="Contact Me">
@@ -40,6 +38,8 @@
     </main>
 
     <x-footer></x-footer>
+
+    <script type="module" src="/src/scripts/index.js"></script>
     <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>

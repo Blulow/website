@@ -80,6 +80,11 @@ body {
     }
 }
 
+.carousel-item * {
+    height: 100%;
+    width: auto;
+}
+
 #projects {
     --x-justify-content: unset;
     --x-align-items: center;
