@@ -6,11 +6,6 @@ class Blog extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
-                * {
-                    margin: 0;
-                    padding: 0;
-                }
-                
                 :host {
                     --x-blog-bg-col: unset;
                     --x-blog-width: unset;
@@ -19,6 +14,10 @@ class Blog extends HTMLElement {
                     --x-title-padding-right: unset;
                     --x-title-padding-bottom: unset;
                     --x-title-padding-left: unset;
+                    --x-content-padding-top: unset;
+                    --x-content-padding-right: unset;
+                    --x-content-padding-bottom: unset;
+                    --x-content-padding-left: unset;
 
                     display: flex;
                     justify-content: center;
@@ -30,9 +29,21 @@ class Blog extends HTMLElement {
                 }
 
                 .title {
+                    margin: 0;
                     font-size: var(--x-title-font-size);
                     text-align: center;
                     padding: var(--x-title-padding-top) var(--x-title-padding-right) var(--x-title-padding-bottom) var(--x-title-padding-left);
+                }
+                
+                .content {
+                    font-size: 1.2rem;
+                    padding: var(--x-content-padding-top) var(--x-content-padding-right) var(--x-content-padding-bottom) var(--x-content-padding-left);
+                }
+
+                blockquote {
+                    background-color: #00000039;
+                    padding: 0.1rem 3rem;
+                    border-left: 0.5rem solid #00000088;
                 }
             </style>
             <div class="container">

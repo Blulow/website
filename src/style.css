@@ -115,6 +115,10 @@ body {
     --x-title-padding-right: 0;
     --x-title-padding-bottom: 2rem;
     --x-title-padding-left: 0;
+    --x-content-padding-top: 1rem;
+    --x-content-padding-right: 12rem;
+    --x-content-padding-bottom: 5rem;
+    --x-content-padding-left: 12rem;
 }
 
 /* section */
