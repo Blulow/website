@@ -1,8 +1,8 @@
 :root {
     --bg-col: #1e2d44;
-    --txt-col: #fdfcdb;
+    --txt-col: #fefdd8;
     --nav-col: #1316303f;
-    --sec-bg-col: #404f1e;
+    --sec-bg-col: #2a3511;
     --sec-head-col: #222816;
     --blog-col: #3d5d8c;
 
@@ -88,6 +88,10 @@ body {
     }
 }
 
+#about-me .section-text {
+    text-align: left;
+}
+
 .carousel-item * {
     height: 100%;
     width: auto;
@@ -146,16 +150,19 @@ body {
     --x-title-padding-bottom: 1rem;
     --x-title-padding-left: 0;
     --x-content-padding-top: 1rem;
-    --x-content-padding-right: 5rem;
+    --x-content-padding-right: 15rem;
     --x-content-padding-bottom: 1rem;
-    --x-content-padding-left: 5rem;
+    --x-content-padding-left: 15rem;
     --x-justify-content: center;
 }
 
 .section-text {    
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     padding: 1rem 5rem;
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-carousel {
