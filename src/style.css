@@ -128,6 +128,20 @@ body {
     margin-left: 0.5em;
 }
 
+#contact {
+    --x-flex-direction: column;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.socials-link img {
+    width: 3em;
+}
+
 /* projects */
 
 .projects-label {
