@@ -51,6 +51,7 @@ body {
     --x-padding-bottom: 1rem;
     --x-padding-left: 2rem;
     --x-gap: 3rem;
+    --x-justify-content: right;
     transform: translateY(-100%);
     animation: navbar-in 0.7s ease-out 0.2s forwards;
 }
@@ -68,6 +69,20 @@ body {
     color: var(--txt-col);
     text-decoration: none;
     font-size: 2rem;
+}
+
+.logo {
+    height: 80%;
+}
+
+.logo .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo * {
+    height: 100%;
 }
 
 /* index */
