@@ -6,7 +6,7 @@
     --sec-bg-col: #47422e;
     --sec-head-col: #948647;
     --carousel-col: #477d94;
-    --blog-col: #39a9ff;
+    --blog-col: #477d94;
 
     --default-font: "CasualWriterMono", Arial, sans-serif;
 }
@@ -114,6 +114,18 @@ body {
     padding: 0.5rem;
     background-color: #1c89dc;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-link span {
+    padding-top: calc(13em/53);
+}
+
+.projects-link img {
+    height: 1.2em;
+    margin-left: 0.5em;
 }
 
 /* projects */
@@ -173,19 +185,13 @@ body {
 }
 
 .section-carousel {
-    /* --x-bg: orange; */
     width: 100%;
     height: 30vw;
     --x-bg: var(--carousel-col);
     --x-gap: 5%;
-    --x-left-arrow-image: none;
-    --x-right-arrow-image: none;
-    /* --x-left-arrow-image: url("assets/images/Blulow.jpg");
-    --x-right-arrow-image: url("assets/images/Blulow.jpg"); */
 }
 
 .section-project-frame {
-    /* width: 30%; */
     --x-txt-col: var(--txt-col);
     --x-text-align: left;
     --x-font-size: 1.2rem;
@@ -205,4 +211,19 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+}
+
+/* utility */
+
+.animated-button {
+    transition: opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.animated-button:hover {
+    opacity: 0.8;
+}
+
+.animated-button:active {
+    transform: scale(0.8);
 }

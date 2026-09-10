@@ -1,6 +1,7 @@
 class Carousel extends HTMLElement {
     
     #animationFrame;
+    #slot;
     #track;
     #trackChildren;
     #ogTrackChildren;
@@ -21,8 +22,6 @@ class Carousel extends HTMLElement {
                 :host {
                     --x-bg: unset;
                     --x-gap: unset;
-                    --x-left-arrow-image: unset;
-                    --x-right-arrow-image: unset;
                     
                     display: block;
                     background-color: var(--x-bg);
@@ -53,42 +52,55 @@ class Carousel extends HTMLElement {
                     display: none;
                 }
                 
-                ::slotted(*) {
+                ::slotted(*):not([name]) {
+                    height: 100%;
+                    width: auto;
+                }
+                
+                ::slotted(img) {
                     height: 100%;
                     width: auto;
                 }
 
                 .carousel-left-arrow {
-                    background-image: var(--x-left-arrow-image);
-                    background-size: 100%;
                     width: 5%;
                     aspect-ratio: 0.25;
                     margin-right: 5%;
                     flex-shrink: 0;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                    transform: scaleX(-1);
                 }
                 
                 .carousel-right-arrow {
-                    background-image: var(--x-right-arrow-image);
-                    background-size: 100%;
                     width: 5%;
                     aspect-ratio: 0.25;
                     margin-left: 5%;
                     flex-shrink: 0;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
                 }
             </style>
 
             <div class="carousel-container" part="container">
-                <button class="carousel-left-arrow" part="left-arrow"></button>
+                <button class="carousel-left-arrow" part="left-arrow">
+                    <slot name="left-arrow"></slot>
+                </button>
                 <div class="carousel-track" part="track">
                     <slot></slot>
                 </div>
-                <button class="carousel-right-arrow" part="right-arrow"></button>
+                <button class="carousel-right-arrow" part="right-arrow">
+                    <slot name="right-arrow"></slot>
+                </button>
             </div>
         `;
 
         this.#update = this.#update.bind(this);
         this.#animationFrame = null;
 
+        this.#slot = this.shadowRoot.querySelector("slot:not([name])");
         this.#track = this.shadowRoot.querySelector(".carousel-track");
         this.#trackChildren = null;
         this.#ogTrackWidth = 0;
@@ -104,9 +116,8 @@ class Carousel extends HTMLElement {
 
         // register child once (prevent infinite loop as #handleScrolling() duplicates children)
         let slotChildAdded = false;
-        const slot = this.shadowRoot.querySelector("slot")
-        slot.addEventListener("slotchange", () => {
-            this.#trackChildren = slot.assignedElements();
+        this.#slot.addEventListener("slotchange", () => {
+            this.#trackChildren = this.#slot.assignedElements();
             if (this.#trackChildren.length > 0 && !slotChildAdded) {
                 this.#handleScrolling();
                 this.#handleButton();
@@ -117,7 +128,7 @@ class Carousel extends HTMLElement {
 
     #handleScrolling() {
         //set original track children
-        this.#trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
+        this.#trackChildren = this.#slot.assignedElements();
         this.#ogTrackChildren = this.#trackChildren;
         
         const container = this.shadowRoot.querySelector(".carousel-container");
@@ -133,7 +144,7 @@ class Carousel extends HTMLElement {
             if (a > 100) break;
             this.#ogTrackChildren.forEach(e => this.appendChild(e.cloneNode(true)));
             trackWidth = this.#track.scrollWidth;
-            this.#trackChildren = this.shadowRoot.querySelector("slot").assignedElements();
+            this.#trackChildren = this.#slot.assignedElements();
             a++;
         }
         

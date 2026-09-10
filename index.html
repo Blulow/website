@@ -27,13 +27,19 @@
                 <span>I first started game development as a hobby at 13, and grew over the years into a serious pursuit of a career in the game industry. Currently, my focus is on building my portfolio and gain a lot of new skills.</span><br>
                 <span>My primary game engine is <span class="hl-text">Godot (both GDScript and C#)</span>, but I also sometimes work with <span class="hl-text">Unity (C#)</span>. I have transferable skills in game programming and design, and I'm always looking to expand my technical and creative abilities.</span><br>
                 <span>I also firmly believe that passion, ambition, and determination to be the best version of yourself, can bring the best games into the world! At the same time, I'm a lifelong learner who's eager to learn about new areas of game development.</span><br>
-                <span>Here, you can find <span class="hl-text">my journey, projects, and things I've learned along the way</span> - from game jams to fun personal projects I've done.</span><br>
+                <span>Here, you can find <span class="hl-text">my journey, projects, and things I've learned along the way</span> — from game jams to fun personal projects I've done.</span><br>
                 <span>I'm actively looking for more opportunities to learn and <span class="hl-text">build something awesome together for the world!</span> :D</span>
             </p>
         </x-section>
         <x-section id="projects" class="section" x-title="Projects">
-            <x-carousel class="section-carousel"></x-carousel>
-            <a class="projects-link" href="/pages/projects.html">ALL PROJECTS</a>
+            <x-carousel class="section-carousel">
+                <img class="left-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Left Arrow" slot="left-arrow">
+                <img class="right-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Right Arrow" slot="right-arrow">
+            </x-carousel>
+            <a class="projects-link animated-button" href="/pages/projects.html">
+                <span>ALL PROJECTS</span>
+                <img src="/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+            </a>
         </x-section>
         <x-section id="contact" class="section" x-title="Contact Me">
             <p class="section-text">

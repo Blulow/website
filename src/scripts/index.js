@@ -4,7 +4,7 @@ const carousel = document.querySelector(".section-carousel");
 projects.forEach(e => {
     const a = document.createElement("a");
     a.href = `/pages/project.html?id=${e.id}`;
-    a.classList.add("carousel-item");
+    a.classList.add("carousel-item", "animated-button");
 
     const img = document.createElement("img");
     img.src = e.coverImage;
