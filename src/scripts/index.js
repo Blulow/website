@@ -1,5 +1,7 @@
 import { projects } from "./projects-data.js";
 
+// carousel
+
 const carousel = document.querySelector(".section-carousel");
 projects.forEach(e => {
     const a = document.createElement("a");
@@ -18,4 +20,30 @@ projects.forEach(e => {
     carouselItem.appendChild(img);
     a.appendChild(carouselItem);
     carousel.appendChild(a);
+});
+
+// video expanding
+
+let expanded = false;
+
+const expandVidBtn = document.querySelector(".expand-video");
+const expandVidImg = expandVidBtn.children[0];
+
+const introVid = document.querySelector(".intro-vid-container");
+introVid.style.height = "70vh";
+
+expandVidBtn.addEventListener("click", () => {
+    if (expanded) {
+        introVid.style.height = "70vh";
+        expandVidImg.src = "/assets/images/expand-video.png";
+        expandVidImg.alt = "Expand Video";
+        expandVidImg.title = "Expand Video";
+        expanded = false;
+    } else {
+        introVid.style.height = "100vh";
+        expandVidImg.src = "/assets/images/shrink-video.png";
+        expandVidImg.alt = "Shrink Video";
+        expandVidImg.title = "Shrink Video";
+        expanded = true;
+    }
 });

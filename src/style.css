@@ -9,11 +9,21 @@
     --blog-col: #477d94;
 
     --default-font: "CasualWriter", Arial, sans-serif;
+    --logo-font: "KnewaveRegular", Arial, sans-serif;
 }
 
 @font-face {
     font-family: "CasualWriter";
     src: url("/assets/fonts/CasualWriter.ttf");
+}
+
+/* Knewave by Tyler Finck on Google Fonts:
+ * https://fonts.google.com/selection?preview.script=Latn
+ */
+
+@font-face {
+    font-family: "KnewaveRegular";
+    src: url("/assets/fonts/Knewave-Regular.ttf");
 }
 
 * {
@@ -87,13 +97,21 @@ body {
 
 /* index */
 
-.intro-vid {
+.intro-vid-container {
+    position: relative;
     display: block;
     background-color: #000000;
     width: 100%;
     height: 100vh;
+    /* animation: introvid-in 0.7s ease-out 0.2s forwards; */
+    transition: height 0.7s ease-out;
+}
+
+.intro-vid {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    animation: introvid-in 0.7s ease-out 0.2s forwards;
 }
 
 @keyframes introvid-in {
@@ -103,6 +121,51 @@ body {
     to {
         height: 70vh;
     }
+}
+
+@keyframes introvid-out {
+    from {
+        height: 70vh;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+.intro-vid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000039;
+}
+
+.intro-vid-overlay h1 {
+    font-size: 10rem;
+    font-family: var(--logo-font);
+}
+
+.intro-vid-overlay h1 .blu {
+    color: #619ce0;
+}
+
+.intro-vid-overlay h1 .low {
+    color: #ffce58;
+}
+
+.expand-video {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 #about-me .section-text {
@@ -286,4 +349,12 @@ body {
 
 .animated-button:active {
     transform: scale(0.8);
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

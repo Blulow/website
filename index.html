@@ -18,10 +18,18 @@
     <x-header></x-header>
 
     <main id="container">
-        <video class="intro-vid" autoplay loop muted playsinline>
-            <source src="" type="video/mp4">
-            Intro video for Blulow
-        </video>
+        <div class="intro-vid-container">
+            <video class="intro-vid" autoplay loop muted playsinline>
+                <source src="" type="video/mp4">
+                Intro video for Blulow
+            </video>
+            <div class="intro-vid-overlay">
+                <h1><span class="blu">BLU</span><span class="low">LOW</span></h1>
+                <button class="expand-video animated-button">
+                    <img src="/assets/images/expand-video.png" alt="Expand Video" title="Expand Video">
+                </button>
+            </div>
+        </div>
 
         <x-section id="about-me" class="section" x-title="About Me">
             <p class="section-text">
