@@ -8,12 +8,12 @@
     --sub-col: #477d94;
     --blog-col: #477d94;
 
-    --default-font: "CasualWriterMono", Arial, sans-serif;
+    --default-font: "CasualWriter", Arial, sans-serif;
 }
 
 @font-face {
-    font-family: "CasualWriterMono";
-    src: url("/assets/fonts/CasualWriterMono.ttf");
+    font-family: "CasualWriter";
+    src: url("/assets/fonts/CasualWriter.ttf");
 }
 
 * {
