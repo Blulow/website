@@ -1,6 +1,7 @@
 :root {
     --bg-col: #1e2d44;
     --txt-col: #fefdd8;
+    --hl-txt-col: #f35959;
     --nav-col: #1316303f;
     --sec-bg-col: #2a3511;
     --sec-head-col: #222816;
@@ -163,6 +164,10 @@ body {
     line-height: 1.5rem;
     display: flex;
     flex-direction: column;
+}
+
+.section-text .hl-text {
+    color: var(--hl-txt-col);
 }
 
 .section-carousel {
