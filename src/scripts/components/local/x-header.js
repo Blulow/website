@@ -7,10 +7,10 @@ class XHeader extends HTMLElement {
         this.outerHTML = `
             <header>
                 <x-navbar id="navbar" aria-label="Navigation Menu">
-                    <a class="nav-links" href="/index.html">Home</a>
-                    <a class="nav-links" href="/index.html#about-me">About</a>
-                    <a class="nav-links" href="/index.html#contact">Contact</a>
-                    <a class="nav-links" href="/pages/projects.html">Projects</a>
+                    <div class="animated-button"><a class="nav-links" href="/index.html">Home</a></div>
+                    <div class="animated-button"><a class="nav-links" href="/index.html#about-me">About</a></div>
+                    <div class="animated-button"><a class="nav-links" href="/index.html#contact">Contact</a></div>
+                    <div class="animated-button"><a class="nav-links" href="/pages/projects.html">Projects</a></div>
                 </x-navbar>
             </header>
         `;

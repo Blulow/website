@@ -4,11 +4,6 @@ class Section extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
-                * {
-                    margin: 0;
-                    padding: 0;
-                }
-
                 :host {
                     --x-sec-head-col: unset;
                     --x-title-font-size: unset;
@@ -49,6 +44,12 @@ class Section extends HTMLElement {
                 </div>
             </div>
         `;
+
+        const css = new CSSStyleSheet();
+        fetch("/src/style.css")
+            .then(res => res.text())
+            .then(text => css.replaceSync(text));
+        this.shadowRoot.adoptedStyleSheets = [css];
 
         this.attachInternals().role = "region";
     }
