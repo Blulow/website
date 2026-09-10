@@ -1,11 +1,12 @@
 :root {
-    --bg-col: #1e2d44;
-    --txt-col: #fefdd8;
-    --hl-txt-col: #f35959;
-    --nav-col: #1316303f;
-    --sec-bg-col: #2a3511;
-    --sec-head-col: #222816;
-    --blog-col: #3d5d8c;
+    --bg-col: #474747;
+    --txt-col: #ffffff;
+    --hl-txt-col: #38ff29;
+    --nav-col: #2262944f;
+    --sec-bg-col: #47422e;
+    --sec-head-col: #948647;
+    --carousel-col: #477d94;
+    --blog-col: #39a9ff;
 
     --default-font: "CasualWriterMono", Arial, sans-serif;
 }
@@ -106,12 +107,13 @@ body {
 
 .projects-link {
     width: 15rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 1rem;
     text-align: center;
     text-decoration: none;
-    background-color: #dddddd;
-    border: 1px solid #000000;
+    padding: 0.5rem;
+    background-color: #1c89dc;
+    color: #ffffff;
 }
 
 /* projects */
@@ -174,7 +176,7 @@ body {
     /* --x-bg: orange; */
     width: 100%;
     height: 30vw;
-    --x-bg: #3498db;
+    --x-bg: var(--carousel-col);
     --x-gap: 5%;
     --x-left-arrow-image: none;
     --x-right-arrow-image: none;
