@@ -270,7 +270,6 @@ class Carousel extends HTMLElement {
             this.#track.scrollLeft -= this.#ogTrackWidth + this.#gapDistance;
             this.#targetScrollLeft -= this.#ogTrackWidth + this.#gapDistance;
         }
-        console.log(this.#closestChildIdx, targetChildIdx, this.#originCycleIdx, this.#ogTrackChildren.length);
         // get target child and distance
         const targetChild = this.#trackChildren[targetChildIdx];
         const targetChildLeft = targetChild.getBoundingClientRect().left + targetChild.getBoundingClientRect().width / 2 - this.#track.getBoundingClientRect().left + this.#track.scrollLeft;

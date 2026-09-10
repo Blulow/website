@@ -54,7 +54,6 @@ class Navbar extends HTMLElement {
     connectedCallback() {
         Array.from(this.children).forEach(e => {
             const li = document.createElement("li");
-            console.log(e);
             if (e.classList.contains("home")) li.slot = "home";
             li.appendChild(e);
             this.appendChild(li);

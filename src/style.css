@@ -177,6 +177,16 @@ body {
     font-size: 1.3rem;
 }
 
+.image-title-frame {
+    --x-title-font-size: 3rem;
+    --x-title-bg-col: #00000099;
+    --x-title-col: #eeeeee;
+    --x-title-padding-top: calc(13em/53);
+    --x-title-padding-right: 0;
+    --x-title-padding-bottom: 0;
+    --x-title-padding-left: 0;
+}
+
 /* blog */
 
 .blog {
