@@ -18,12 +18,15 @@
     <main id="container">
         <x-nav-margin></x-nav-margin>
 
-        <h1 class="projects-label">Projects</h1>
+        <div class="projects-heading">
+            <h1 class="projects-label">Projects</h1>
+            <p class="projects-description">These are my projects — from game jams to fun personal projects!</p>
+        </div>
 
-        <x-section id="highlighted" class="section" x-title="Highlighted">
+        <x-section id="highlighted" class="section" x-title="Highlighted" x-description="Click on the image to learn more.">
             <div id="highlighted-container" class="section-project-frame-container"></div>
         </x-section>
-        <x-section id="other" class="section" x-title="Other">
+        <x-section id="other" class="section" x-title="Other" x-description="Click on the image to learn more.">
             <div id="other-container" class="section-project-frame-container"></div>
         </x-section>
     </main>

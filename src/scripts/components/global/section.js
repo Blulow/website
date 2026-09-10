@@ -9,10 +9,18 @@ class Section extends HTMLElement {
                     --x-title-font-size: unset;
                     --x-text-align: unset;
                     --x-flex-direction: unset;
+                    --x-heading-padding-top: unset;
+                    --x-heading-padding-right: unset;
+                    --x-heading-padding-bottom: unset;
+                    --x-heading-padding-left: unset;
                     --x-title-padding-top: unset;
                     --x-title-padding-right: unset;
                     --x-title-padding-bottom: unset;
                     --x-title-padding-left: unset;
+                    --x-description-padding-top: unset;
+                    --x-description-padding-right: unset;
+                    --x-description-padding-bottom: unset;
+                    --x-description-padding-left: unset;
                     --x-content-padding-top: unset;
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
@@ -22,11 +30,20 @@ class Section extends HTMLElement {
                     display: block;
                 }
 
-                .section-title {
+                .section-heading {
                     background-color: var(--sec-head-col);
-                    font-size: var(--x-title-font-size);
                     text-align: var(--x-text-align);
+                    padding: var(--x-heading-padding-top) var(--x-heading-padding-right) var(--x-heading-padding-bottom) var(--x-heading-padding-left);
+                }
+                
+                .section-title {
+                    font-size: var(--x-title-font-size);
                     padding: var(--x-title-padding-top) var(--x-title-padding-right) var(--x-title-padding-bottom) var(--x-title-padding-left);
+                }
+                
+                .section-description {
+                    font-size: var(--x-description-font-size);
+                    padding: var(--x-description-padding-top) var(--x-description-padding-right) var(--x-description-padding-bottom) var(--x-description-padding-left);
                 }
 
                 .section-content {
@@ -37,8 +54,11 @@ class Section extends HTMLElement {
                     padding: var(--x-content-padding-top) var(--x-content-padding-right) var(--x-content-padding-bottom) var(--x-content-padding-left);
                 }
             </style>
-            <div class="section-container">    
-                <h1 class="section-title"></h1>
+            <div class="section-container">
+                <div class="section-heading">
+                    <h1 class="section-title"></h1>
+                    <p class="section-description"></p>
+                </div>
                 <div class="section-content">
                     <slot></slot>
                 </div>
@@ -55,11 +75,18 @@ class Section extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ["x-title"];
+        return ["x-title", "x-description"];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "x-title") this.shadowRoot.querySelector(".section-title").textContent = newValue;
+        switch (name) {
+            case "x-title":
+                this.shadowRoot.querySelector(".section-title").textContent = newValue;
+                break;
+            case "x-description":
+                this.shadowRoot.querySelector(".section-description").textContent = newValue;
+                break;
+        }
     }
 }
 
