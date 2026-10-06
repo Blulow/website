@@ -1,5 +1,10 @@
 import { projects } from "./projects-data.js";
 
+// navbar
+
+const homeBtn = document.querySelector(".nav-home-btn");
+homeBtn.classList.add("nav-btn-active");
+
 // carousel
 
 const carousel = document.querySelector(".section-carousel");

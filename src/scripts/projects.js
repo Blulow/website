@@ -1,5 +1,12 @@
 import { projects } from "./projects-data.js";
 
+// navbar
+
+const homeBtn = document.querySelector(".nav-projects-btn");
+homeBtn.classList.add("nav-btn-active");
+
+// projects
+
 // get project data by type
 const hProjects = projects.filter(e => e.type === "highlighted");
 const oProjects = projects.filter(e => e.type === "regular");

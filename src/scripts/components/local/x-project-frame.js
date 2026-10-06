@@ -23,6 +23,7 @@ class ProjectFrame extends HTMLElement {
                     --x-content-padding-bottom: unset;
                     --x-content-padding-left: unset;
                     --x-content-max-width: unset;
+                    --x-content-hl-text-col: unset;
                     --x-title-font-size: unset;
 
                     display: flex;
@@ -65,6 +66,10 @@ class ProjectFrame extends HTMLElement {
                     font-size: var(--x-font-size);
                     color: var(--x-txt-col);
                     padding: var(--x-description-padding-top) var(--x-description-padding-right) var(--x-description-padding-bottom) var(--x-description-padding-left);
+                }
+                
+                ::slotted(.hl-text) {
+                    color: var(--x-content-hl-text-col);
                 }
             </style>
             <a class="frame-project-link" href="">

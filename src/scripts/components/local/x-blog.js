@@ -18,6 +18,7 @@ class Blog extends HTMLElement {
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
                     --x-content-padding-left: unset;
+                    --x-content-hl-text-col: unset;
 
                     display: flex;
                     justify-content: center;
@@ -44,6 +45,10 @@ class Blog extends HTMLElement {
                     background-color: #00000039;
                     padding: 0.1rem 3rem;
                     border-left: 0.5rem solid #00000088;
+                }
+
+                .hl-text {
+                    color: var(--x-content-hl-text-col);
                 }
             </style>
             <div class="container">
