@@ -5,7 +5,7 @@
         "description": "A small 3D modelling software made with <span class=\"hl-text\">OpenGL</span> in <span class=\"hl-text\">C++</span>. Bridges the gap between voxel manipulation and polygonal vertex editing. <br><br>Ongoing project.",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/project-blogs/test-project.md",
+        "content": "/assets/data/project-blogs/smallmodeler.md",
         "type": "highlighted"
     },
     {
