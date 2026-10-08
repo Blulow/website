@@ -2,8 +2,8 @@ import { addProjects } from "./projects-data.js";
 
 // navbar
 
-const homeBtn = document.querySelector(".nav-projects-btn");
-homeBtn.classList.add("nav-btn-active");
+const projectsBtn = document.querySelector(".nav-projects-btn");
+projectsBtn.classList.add("nav-btn-active");
 
 // projects
 
