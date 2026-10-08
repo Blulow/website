@@ -1,2 +1,7 @@
 url: "https://blulow.github.io"
 baseurl: ""
+
+include:
+  - assets
+  - pages
+  - src
