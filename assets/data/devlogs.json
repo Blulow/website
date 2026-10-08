@@ -7,5 +7,23 @@
         "coverAlt": "Image Alt",
         "content": "/assets/data/devlog-blogs/devlog-1.md",
         "type": "devlogs"
+    },
+    {
+        "id": "devlog2",
+        "title": "Devlog #2",
+        "description": "The beginning of production of the project.",
+        "coverImage": "/assets/images/Blulow.jpg",
+        "coverAlt": "Image Alt",
+        "content": "/assets/data/devlog-blogs/devlog-2.md",
+        "type": "devlogs"
+    },
+    {
+        "id": "devlog3",
+        "title": "Devlog #3",
+        "description": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit",
+        "coverImage": "/assets/images/Blulow.jpg",
+        "coverAlt": "Image Alt",
+        "content": "/assets/data/devlog-blogs/devlog-3.md",
+        "type": "devlogs"
     }
 ]

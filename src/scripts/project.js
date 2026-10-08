@@ -13,8 +13,6 @@ if (!location) throw new Error(`Unknown data source: ${src}`);
 const projects = await getProjects(location);
 const project = projects.find(e => e.id === id);
 
-console.log(project);
-
 document.title = project.title;
 
 const container = document.querySelector(".blog-container");
