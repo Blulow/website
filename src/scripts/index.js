@@ -1,4 +1,4 @@
-import { projects } from "./projects-data.js";
+import { projects } from "./projects/projects-data.js";
 
 // navbar
 

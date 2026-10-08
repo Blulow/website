@@ -1,4 +1,4 @@
-import { locations, getProjects } from "../../projects-data.js";
+import { locations, getProjects } from "../../projects/projects-data.js";
 
 class DevlogNav extends HTMLElement {
     constructor() {
