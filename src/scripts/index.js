@@ -1,4 +1,4 @@
-import { projects } from "./projects/projects-data.js";
+import { locations, getProjects } from "./projects/projects-data.js";
 
 // navbar
 
@@ -8,6 +8,7 @@ homeBtn.classList.add("nav-btn-active");
 // carousel
 
 const carousel = document.querySelector(".section-carousel");
+const projects = await getProjects(locations.projects);
 projects.forEach(e => {
     const a = document.createElement("a");
     a.href = `/pages/project.html?id=${e.id}`;
