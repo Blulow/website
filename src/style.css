@@ -6,7 +6,7 @@
     --sec-bg-col: #47422e;
     --sec-head-col: #948647;
     --sub-col: #477d94;
-    --blog-col: #335c6e;
+    --blog-col:     #335c6e;
 
     --default-font: "CasualWriter", Arial, sans-serif;
     --logo-font: "KnewaveRegular", Arial, sans-serif;
@@ -241,23 +241,6 @@ body {
 
 /* projects */
 
-.projects-heading {
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.projects-label {
-    text-align: center;
-    font-size: 5rem;
-}
-
-.projects-description {
-    text-align: center;
-    font-size: 1.3rem;
-}
-
 .image-title-frame {
     --x-title-font-size: 3rem;
     --x-title-bg-col: #00000099;
@@ -377,4 +360,21 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.heading {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.heading-label {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.heading-description {
+    text-align: center;
+    font-size: 1.3rem;
 }

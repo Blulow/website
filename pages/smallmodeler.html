@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="shortcut icon" href="/assets/images/Blulow.jpg" type="image/jpg">
-    <link rel="stylesheet" href="../src/style.css">
+    <title>Small Modeler Devlog</title>
+    <link rel="stylesheet" href="/src/style.css">
     <script src="../src/scripts/components/global/navbar.js" defer></script>
     <script src="../src/scripts/components/global/section.js" defer></script>
     <script src="../src/scripts/components/local/x-header.js" defer></script>
@@ -20,20 +19,16 @@
         <x-nav-margin></x-nav-margin>
 
         <div class="heading">
-            <h1 class="heading-label">Projects</h1>
-            <p class="heading-description">These are my projects — from game jams to fun personal projects!</p>
+            <h1 class="heading-label">Small Modeler</h1>
+            <p class="heading-description">These are the devlogs for my modeling software.</p>
         </div>
 
-        <x-section id="highlighted" class="section" x-title="Highlighted" x-description="Click on the image to learn more.">
-            <div id="highlighted-container" class="section-project-frame-container"></div>
-        </x-section>
-        <x-section id="other" class="section" x-title="Other (also cool)" x-description="Click on the image to learn more.">
-            <div id="other-container" class="section-project-frame-container"></div>
+        <x-section id="devlogs-container" class="section" x-title="Devlogs">
+            <div id="devlog-container" class="section-project-frame-container"></div>
         </x-section>
     </main>
 
     <x-footer></x-footer>
-
-    <script type="module" src="/src/scripts/projects.js"></script>
+    <script type="module" src="/src/scripts/devlogs.js"></script>
 </body>
 </html>

@@ -2,4 +2,4 @@ This is a small 3D modeling software that I am currently making using C++ and Op
 
 This will be quite a journey to take, so I wanted to log my progress and stuff I learned down into a series of devlogs. Even if it won't come out as great, I'm glad I have made something like this out.
 
-Here is my devlog.
+Here is my [devlog](/pages/smallmodeler.html "Small Modeler Devlog").

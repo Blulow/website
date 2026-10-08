@@ -1,0 +1,11 @@
+[
+    {
+        "id": "devlog1",
+        "title": "Devlog #1",
+        "description": "The first devlog of this project! Here, I talk about why I wanted to do this and stuff I considered before starting.",
+        "coverImage": "/assets/images/Blulow.jpg",
+        "coverAlt": "Image Alt",
+        "content": "",
+        "type": "devlogs"
+    }
+]
