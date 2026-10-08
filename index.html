@@ -18,6 +18,36 @@
     <x-header></x-header>
 
     <main id="container">
+        
+        <!-- content height markers for # href navs -->
+
+        <div id="marker-container">
+            <div id="intro-vid-container-marker" class="marker"></div>
+            <x-section id="about-me-marker" class="marker section" x-title="About Me">
+                <p class="section-text">
+                    <span>Game designer and developer from Malaysia here! I live with a <span class="hl-text">dream to make games that people can love, remember, and be inspired by for years to come.</span></span><br>
+                    <span>I first started game development as a hobby at 13, and grew over the years into a serious pursuit of a career in the game industry. Currently, my focus is on building my portfolio and gain a lot of new skills.</span><br>
+                    <span>My primary game engine is <span class="hl-text">Godot (both GDScript and C#)</span>, but I also sometimes work with <span class="hl-text">Unity (C#)</span>. I have transferable skills in game programming and design, and I'm always looking to expand my technical and creative abilities.</span><br>
+                    <span>I also firmly believe that passion, ambition, and determination to be the best version of yourself, can bring the best games into the world! At the same time, I'm a lifelong learner who's eager to learn about new areas of game development.</span><br>
+                    <span>Here, you can find <span class="hl-text">my journey, projects, and things I've learned along the way</span> — from game jams to fun personal projects I've done.</span><br>
+                    <span>I'm actively looking for more opportunities to learn and <span class="hl-text">build something awesome together for the world!</span> :D</span>
+                </p>
+            </x-section>
+            <x-section id="projects-marker" class="marker section" x-title="Projects" x-description="Click on an image to learn more, or click &quot;ALL PROJECTS&quot; to see all projects.">
+                <x-carousel class="section-carousel">
+                    <img class="left-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Left Arrow" slot="left-arrow">
+                    <img class="right-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Right Arrow" slot="right-arrow">
+                </x-carousel>
+                <a class="btn-link animated-button" href="/pages/projects.html" title="All My Projects ->">
+                    <span><strong>ALL PROJECTS</strong></span>
+                    <img src="/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                </a>
+            </x-section>
+            <div id="contact-marker" class="marker"></div>
+        </div>
+        
+        <!-- actual content -->
+
         <div class="intro-vid-container">
             <video class="intro-vid" autoplay loop muted playsinline>
                 <source src="" type="video/mp4">
@@ -42,7 +72,7 @@
             </p>
         </x-section>
         <x-section id="projects" class="section" x-title="Projects" x-description="Click on an image to learn more, or click &quot;ALL PROJECTS&quot; to see all projects.">
-            <x-carousel class="section-carousel">
+            <x-carousel id="projects-carousel" class="section-carousel">
                 <img class="left-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Left Arrow" slot="left-arrow">
                 <img class="right-carousel-arrow animated-button" src="/assets/images/carousel-arrow.png" alt="Right Arrow" slot="right-arrow">
             </x-carousel>
@@ -79,6 +109,7 @@
                 </a></span>
             </div>
         </x-section>
+
     </main>
 
     <x-footer></x-footer>

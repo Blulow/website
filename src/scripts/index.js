@@ -7,7 +7,7 @@ homeBtn.classList.add("nav-btn-active");
 
 // carousel
 
-const carousel = document.querySelector(".section-carousel");
+const carousel = document.querySelector("#projects-carousel");
 const projects = await getProjects(locations.projects);
 projects.forEach(e => {
     const a = document.createElement("a");
