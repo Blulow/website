@@ -5,7 +5,7 @@
         "description": "The first devlog of this project! Here, I talk about why I wanted to do this and stuff I considered before starting.",
         "coverImage": "/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "",
+        "content": "/assets/data/devlog-blogs/devlog-1.md",
         "type": "devlogs"
     }
 ]

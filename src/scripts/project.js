@@ -1,5 +1,7 @@
 import { locations, getProjects } from "./projects-data.js";
 
+// project content loading
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const src = params.get("src");
@@ -19,3 +21,7 @@ const container = document.querySelector(".blog-container");
 container.innerHTML = `
     <x-blog class="blog" x-title="${project.title}" x-content="${project.content}"></x-blog>
 `;
+
+// devlog nav
+
+if (src === "devlogs") document.querySelector("#container").appendChild(document.createElement("x-devlog-nav"));

@@ -1,4 +1,4 @@
-import {  addProjects } from "./projects-data.js";
+import { addProjects } from "./projects-data.js";
 
 // projects
 
