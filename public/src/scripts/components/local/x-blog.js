@@ -71,15 +71,27 @@ class Blog extends HTMLElement {
                 break;
             case "x-content":
                 if (!newValue) throw new Error("The attribute x-content is empty.");
+
+                const f = new URL(".", import.meta.url).href;
+                const p = new URL("../../../../", f).href;
+
                 fetch(newValue)
                     .then(res => res.text())
                     .then(text => {
-                        content.innerHTML = marked.parse(text);
+                        const t = marked.parse(text);
+                        
+                        const t2 = t.replace(/(\b(?:href|src)\s*=\s*["'])(\.{1,2}\/|\/)([^"']*)(["'])/gi,
+                            (_, start, relative, path, end) =>
+                            `${start}${p}${path}${end}`
+                        );
+
+                        content.innerHTML = t2;
                     })
                     .catch(err => {
                         content.innerHTML = "Error loading content.";
                         console.error(err);
                     });
+                    
                 break;
         }
     }

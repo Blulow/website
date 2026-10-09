@@ -1,6 +1,9 @@
+const f = new URL(".", import.meta.url).href;
+const _public = new URL("../../../", f).href;
+
 export const locations = {
-    projects: "/public/assets/data/projects.json",
-    devlogs: "/public/assets/data/devlogs.json"
+    projects: `${_public}/assets/data/projects.json`,
+    devlogs: `${_public}/assets/data/devlogs.json`
 }
 
 export async function getProjects(location) {
@@ -12,8 +15,9 @@ export async function getProjects(location) {
 }
 
 export function addProject(data, container, src) {
+    const project = new URL("../../../pages/project.html", f).href;
     container.innerHTML += `
-        <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="/public/pages/project.html?src=${src}&id=${data.id}" x-src="${data.coverImage}" x-alt="${data.coverAlt}">
+        <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="${project}?src=${src}&id=${data.id}" x-src="${_public}${data.coverImage}" x-alt="${data.coverAlt}">
             ${data.description}
         </x-project-frame>
     `;

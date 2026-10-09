@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "CasualWriter";
-    src: url("/public/assets/fonts/CasualWriter.ttf");
+    src: url("../assets/fonts/CasualWriter.ttf");
 }
 
 /* Knewave by Tyler Finck on Google Fonts:
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: "KnewaveRegular";
-    src: url("/public/assets/fonts/Knewave-Regular.ttf");
+    src: url("../assets/fonts/Knewave-Regular.ttf");
 }
 
 * {

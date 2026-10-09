@@ -11,7 +11,8 @@ const carousel = document.querySelector("#projects-carousel");
 const projects = await getProjects(locations.projects);
 projects.forEach(e => {
     const a = document.createElement("a");
-    a.href = `/pages/project.html?id=${e.id}`;
+
+    a.href = `public/pages/project.html?src=projects&id=${e.id}`;
     a.classList.add("carousel-item", "animated-button");
 
     const carouselItem = document.createElement("x-image-title-frame");
@@ -19,7 +20,7 @@ projects.forEach(e => {
     carouselItem.setAttribute("x-title", e.title);
     
     const img = document.createElement("img");
-    img.src = e.coverImage;
+    img.src = `public/${e.coverImage}`;
     img.alt = e.coverAlt;
     img.title = e.title;
 
@@ -41,13 +42,13 @@ introVid.style.height = "70vh";
 expandVidBtn.addEventListener("click", () => {
     if (expanded) {
         introVid.style.height = "70vh";
-        expandVidImg.src = "/public/assets/images/expand-video.png";
+        expandVidImg.src = "public/assets/images/expand-video.png";
         expandVidImg.alt = "Expand Video";
         expandVidImg.title = "Expand Video";
         expanded = false;
     } else {
         introVid.style.height = "100vh";
-        expandVidImg.src = "/public/assets/images/shrink-video.png";
+        expandVidImg.src = "public/assets/images/shrink-video.png";
         expandVidImg.alt = "Shrink Video";
         expandVidImg.title = "Shrink Video";
         expanded = true;

@@ -1,3 +1,5 @@
+import sheet from "../../../style.css" with { type: "css" };
+
 class Section extends HTMLElement {
     constructor() {
         super();
@@ -65,11 +67,7 @@ class Section extends HTMLElement {
             </div>
         `;
 
-        const css = new CSSStyleSheet();
-        fetch("/public/src/style.css")
-            .then(res => res.text())
-            .then(text => css.replaceSync(text));
-        this.shadowRoot.adoptedStyleSheets = [css];
+        this.shadowRoot.adoptedStyleSheets = [sheet];
 
         this.attachInternals().role = "region";
     }

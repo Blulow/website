@@ -1,31 +1,33 @@
+import sheet from "../../../style.css" with { type: "css" };
 import { locations, getProjects } from "../../projects/projects-data.js";
 
 class DevlogNav extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+
+        const f = new URL(".", import.meta.url).href;
+        const devlogPage = new URL("../../../../pages/smallmodeler.html", f).href;
+        const arrowImg = new URL("../../../../assets/images/proceed-arrow.png", f).href;
+
         this.shadowRoot.innerHTML = `
             <div id="devlog-nav">
-                <a id="devlog-all" class="btn-link animated-button devlog-nav-btn" href="/public/pages/smallmodeler.html">
-                    <img class="flipped" src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                <a id="devlog-all" class="btn-link animated-button devlog-nav-btn" href="${devlogPage}">
+                    <img class="flipped" src="${arrowImg}" alt="Proceed Arrow">
                     <span><strong>All Devlogs</strong></span>
                 </a>
                 <a id="devlog-prev" class="btn-link animated-button devlog-nav-btn" href="">
-                    <img class="flipped" src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                    <img class="flipped" src="${arrowImg}" alt="Proceed Arrow">
                     <span><strong>Previous Devlog</strong></span>
                 </a>
                 <a id="devlog-next" class="btn-link animated-button devlog-nav-btn" href="">
                     <span><strong>Next Devlog</strong></span>
-                    <img src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                    <img src="${arrowImg}" alt="Proceed Arrow">
                 </a>
             </div>
         `
 
-        const css = new CSSStyleSheet();
-        fetch("/public/src/style.css")
-            .then(res => res.text())
-            .then(text => css.replaceSync(text));
-        this.shadowRoot.adoptedStyleSheets = [css];
+        this.shadowRoot.adoptedStyleSheets = [sheet];
     }
 
     async connectedCallback() {
@@ -61,8 +63,11 @@ class DevlogNav extends HTMLElement {
 
         const prevDevlogId = devlogIdx > 0 ? devlogs[devlogIdx - 1].id : null;
         const nextDevlogId = devlogIdx < devlogs.length - 1 ? devlogs[devlogIdx + 1].id : null;
-        prevBtn.href = prevDevlogId ? `/pages/project.html?src=devlogs&id=${prevDevlogId}` : "";
-        nextBtn.href = nextDevlogId ? `/pages/project.html?src=devlogs&id=${nextDevlogId}` : "";
+
+        const f = new URL(".", import.meta.url).href;
+        const pages = new URL("../../../../pages", f).href;
+        prevBtn.href = prevDevlogId ? `${pages}/project.html?src=devlogs&id=${prevDevlogId}` : "";
+        nextBtn.href = nextDevlogId ? `${pages}/project.html?src=devlogs&id=${nextDevlogId}` : "";
     }
 }
 
