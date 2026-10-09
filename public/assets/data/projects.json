@@ -3,25 +3,25 @@
         "id": "smallmodeler",
         "title": "Small Modeller",
         "description": "A small 3D modelling software made with <span class=\"hl-text\">OpenGL</span> in <span class=\"hl-text\">C++</span>. Bridges the gap between voxel manipulation and polygonal vertex editing. <br><br>Ongoing project.",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/project-blogs/smallmodeler.md",
+        "content": "/public/assets/data/project-blogs/smallmodeler.md",
         "type": "highlighted"
     },
     {
         "id": "adanceonthelake",
         "title": "A Dance On The Lake",
         "description": "A <span class=\"hl-text\">web app game</span>, entry to the Magical Mirai Programming Contest 2026. <br><br>Built with <span class=\"hl-text\">vanilla HTML/CSS/JS</span>, with the <span class=\"hl-text\">TextAlive API</span>. This is a <span class=\"hl-text\">lyric-based rhythm bullet hell game</span>, features multiple charts and complex bullet patterns. <br><br>3-month-long project.",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/project-blogs/test-project.md",
+        "content": "/public/assets/data/project-blogs/test-project.md",
         "type": "highlighted"
     },
     {
         "id": "singularity",
         "title": "Singularity",
         "description": "A <span class=\"hl-text\">puzzle game</span> with a unsettling horror and dystopian vibe. Using the rules given, you have to deduce the number of people present, rejecting singularity (less than 2 people). <span class=\"hl-text\">Proudest game so far</span>. <br><br>Made for Brackeys Game Jam 2026.2 in a week.",
-        "coverImage": "/assets/images/cover-images/singularity_cover.png",
+        "coverImage": "/public/assets/images/cover-images/singularity_cover.png",
         "coverAlt": "Singularity cover image",
         "content": "",
         "type": "regular"
@@ -30,7 +30,7 @@
         "id": "redhanded",
         "title": "Red-Handed",
         "description": "<span class=\"hl-text\">First awarded game jam entry</span>, being 3rd place in a local game jam with a team. This is a <span class=\"hl-text\">puzzle and stealth game</span> where you have to avoid getting caught by lights by changing your body color. Features mechanics like color mixing to get the right color. <br><br>Played the role for gameplay programming, BGM and SFX, and level design. \nMade for Great Game Jam in 4 days.",
-        "coverImage": "/assets/images/cover-images/redhanded_cover.png",
+        "coverImage": "/public/assets/images/cover-images/redhanded_cover.png",
         "coverAlt": "Red-Handed cover image",
         "content": "",
         "type": "regular"
@@ -39,7 +39,7 @@
         "id": "underwaterswing",
         "title": "Underwater Swing",
         "description": "First proud game jam entry. A <span class=\"hl-text\">bullet heaven and roguelike game</span> where you kill mass enemies and upgrade stats to survive as long as you can. The most prominent mechanic being the static rope swinging, gaining momentum, and killing enemies with the rope. <br><br>Made for Major Jam 8 in 5 days.",
-        "coverImage": "/assets/images/cover-images/underwaterswing_cover.png",
+        "coverImage": "/public/assets/images/cover-images/underwaterswing_cover.png",
         "coverAlt": "Underwater Swing cover image",
         "content": "",
         "type": "regular"
@@ -48,7 +48,7 @@
         "id": "rrwsm",
         "title": "Roulette Mod",
         "description": "A <span class=\"hl-text\">Minecraft Forge 1.18.2 Mod</span> I made for a client using <span class=\"hl-text\">Java</span> in the <span class=\"hl-text\">Eclipse IDE</span>. Includes a roulette wheel and slot machine with animations and item randomizing functionality, along with customizing the items to be dispensed.",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
         "content": "",
         "type": "regular"
@@ -57,7 +57,7 @@
         "id": "happylittleexplosions",
         "title": "Happy Little Explosions",
         "description": "My first local and team game jam. A <span class=\"hl-text\">2D platformer and puzzle game</span> where you shoot boxes to get around, and reach the flag. In cursed areas (red), shooting the box will create an explosion force which repels the player. <br><br>Contributed on gameplay programming, background art, BGM and SFX, and level design. <br><br>Made for Bit Game Jam 2026 in 4 days.",
-        "coverImage": "/assets/images/cover-images/happylittleexplosions_cover.png",
+        "coverImage": "/public/assets/images/cover-images/happylittleexplosions_cover.png",
         "coverAlt": "Happy Little Explosions cover image",
         "content": "",
         "type": "regular"
@@ -66,7 +66,7 @@
         "id": "onitslasthand",
         "title": "On Its Last Hand",
         "description": "A stress-inducing<span class=\"hl-text\">time management and strategy game</span> where you keep replenishing your health until the time runs out. Features a wide variety of mechanics from multi-stage minigames, to grip-and-pull movement. <br><br>Played the role for game design, BGM and SFX, and a few sprite art. <br><br>Made for GMTK Game Jam 2026 in 4 days.",
-        "coverImage": "/assets/images/cover-images/onitslasthand_cover.png",
+        "coverImage": "/public/assets/images/cover-images/onitslasthand_cover.png",
         "coverAlt": "On Its Last Hand cover image",
         "content": "",
         "type": "regular"
@@ -75,7 +75,7 @@
         "id": "spacehunter",
         "title": "Space Hunter",
         "description": "A <span class=\"hl-text\">2D platformer game</span> where you have a collect resources to complete missions. Features mechanics like Minecraft-style block breaking, item picking, and inventory viewing, as well as shooting monsters. <br><br>Made for Godot Wild Jam #93 in a week.",
-        "coverImage": "/assets/images/cover-images/spacehunter_cover.png",
+        "coverImage": "/public/assets/images/cover-images/spacehunter_cover.png",
         "coverAlt": "Space Hunter cover image",
         "content": "",
         "type": "regular"
@@ -84,7 +84,7 @@
         "id": "orbitalrain",
         "title": "Orbital Rain",
         "description": "A <span class=\"hl-text\">rhythm and bullet hell game</span> where bullets come in beat which you have to dodge, featuring a more rhythm game style with no death penalty. Mechanics include playing charts and a specialized movement mechanic, and shrinking (making yourself temporarily invincible). <br><br>Made for Bullet Hell Jam 7 in a week.",
-        "coverImage": "/assets/images/cover-images/orbitalrain_cover.png",
+        "coverImage": "/public/assets/images/cover-images/orbitalrain_cover.png",
         "coverAlt": "Orbital Rain cover image",
         "content": "",
         "type": "regular"
@@ -93,7 +93,7 @@
         "id": "lifebringer",
         "title": "Lifebringer",
         "description": "A <span class=\"hl-text\">rhythm and bullet hell game</span> where bullets move in beat which you have to dodge them. Features mechanics like different bullet patterns and player effects. <br><br>Made for Conduit Festival Game Jam and Queble's Jam in a week.",
-        "coverImage": "/assets/images/cover-images/lifebringer_cover.png",
+        "coverImage": "/public/assets/images/cover-images/lifebringer_cover.png",
         "coverAlt": "Lifebringer cover image",
         "content": "",
         "type": "regular"
@@ -102,7 +102,7 @@
         "id": "totknt",
         "title": "Trial Of The Kusanagi No Tsurugi",
         "description": "A chaotic <span class=\"hl-text\">bullet hell and boss fighting game</span> where you dodge attacks and attack the boss. Mechanics include different attacks and a staged boss fight. <br><br>Made for Mini Jam 210 and Solo Dev Jam #11 in 4 days.",
-        "coverImage": "/assets/images/cover-images/totknt_cover.png",
+        "coverImage": "/public/assets/images/cover-images/totknt_cover.png",
         "coverAlt": "Trial of the Kusanagi No Tsurugi cover image",
         "content": "",
         "type": "regular"

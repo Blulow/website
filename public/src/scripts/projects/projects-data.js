@@ -1,6 +1,6 @@
 export const locations = {
-    projects: "/assets/data/projects.json",
-    devlogs: "/assets/data/devlogs.json"
+    projects: "/public/assets/data/projects.json",
+    devlogs: "/public/assets/data/devlogs.json"
 }
 
 export async function getProjects(location) {
@@ -13,7 +13,7 @@ export async function getProjects(location) {
 
 export function addProject(data, container, src) {
     container.innerHTML += `
-        <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="/pages/project.html?src=${src}&id=${data.id}" x-src="${data.coverImage}" x-alt="${data.coverAlt}">
+        <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="/public/pages/project.html?src=${src}&id=${data.id}" x-src="${data.coverImage}" x-alt="${data.coverAlt}">
             ${data.description}
         </x-project-frame>
     `;

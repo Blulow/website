@@ -82,7 +82,7 @@ class ProjectFrame extends HTMLElement {
         `;
         
         const css = new CSSStyleSheet();
-        fetch("/src/style.css")
+        fetch("/public/src/style.css")
             .then(res => res.text())
             .then(text => css.replaceSync(text));
         this.shadowRoot.adoptedStyleSheets = [css];

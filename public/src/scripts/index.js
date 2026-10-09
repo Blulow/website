@@ -41,13 +41,13 @@ introVid.style.height = "70vh";
 expandVidBtn.addEventListener("click", () => {
     if (expanded) {
         introVid.style.height = "70vh";
-        expandVidImg.src = "/assets/images/expand-video.png";
+        expandVidImg.src = "/public/assets/images/expand-video.png";
         expandVidImg.alt = "Expand Video";
         expandVidImg.title = "Expand Video";
         expanded = false;
     } else {
         introVid.style.height = "100vh";
-        expandVidImg.src = "/assets/images/shrink-video.png";
+        expandVidImg.src = "/public/assets/images/shrink-video.png";
         expandVidImg.alt = "Shrink Video";
         expandVidImg.title = "Shrink Video";
         expanded = true;

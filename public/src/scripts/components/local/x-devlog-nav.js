@@ -6,23 +6,23 @@ class DevlogNav extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <div id="devlog-nav">
-                <a id="devlog-all" class="btn-link animated-button devlog-nav-btn" href="/pages/smallmodeler.html">
-                    <img class="flipped" src="/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                <a id="devlog-all" class="btn-link animated-button devlog-nav-btn" href="/public/pages/smallmodeler.html">
+                    <img class="flipped" src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
                     <span><strong>All Devlogs</strong></span>
                 </a>
                 <a id="devlog-prev" class="btn-link animated-button devlog-nav-btn" href="">
-                    <img class="flipped" src="/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                    <img class="flipped" src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
                     <span><strong>Previous Devlog</strong></span>
                 </a>
                 <a id="devlog-next" class="btn-link animated-button devlog-nav-btn" href="">
                     <span><strong>Next Devlog</strong></span>
-                    <img src="/assets/images/proceed-arrow.png" alt="Proceed Arrow">
+                    <img src="/public/assets/images/proceed-arrow.png" alt="Proceed Arrow">
                 </a>
             </div>
         `
 
         const css = new CSSStyleSheet();
-        fetch("/src/style.css")
+        fetch("/public/src/style.css")
             .then(res => res.text())
             .then(text => css.replaceSync(text));
         this.shadowRoot.adoptedStyleSheets = [css];

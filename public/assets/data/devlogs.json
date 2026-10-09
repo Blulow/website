@@ -3,27 +3,27 @@
         "id": "devlog1",
         "title": "Devlog #1",
         "description": "The first devlog of this project! Here, I talk about why I wanted to do this and stuff I considered before starting.",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/devlog-blogs/devlog-1.md",
+        "content": "/public/assets/data/devlog-blogs/devlog-1.md",
         "type": "devlogs"
     },
     {
         "id": "devlog2",
         "title": "Devlog #2",
         "description": "The beginning of production of the project.",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/devlog-blogs/devlog-2.md",
+        "content": "/public/assets/data/devlog-blogs/devlog-2.md",
         "type": "devlogs"
     },
     {
         "id": "devlog3",
         "title": "Devlog #3",
         "description": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit",
-        "coverImage": "/assets/images/Blulow.jpg",
+        "coverImage": "/public/assets/images/Blulow.jpg",
         "coverAlt": "Image Alt",
-        "content": "/assets/data/devlog-blogs/devlog-3.md",
+        "content": "/public/assets/data/devlog-blogs/devlog-3.md",
         "type": "devlogs"
     }
 ]
