@@ -37,17 +37,23 @@ const expandVidBtn = document.querySelector(".expand-video");
 const expandVidImg = expandVidBtn.children[0];
 
 const introVid = document.querySelector(".intro-vid-container");
+const introVidMarker = document.querySelector("#intro-vid-container-marker");
+const navbar = document.querySelector("#navbar");
 introVid.style.height = "70vh";
+introVidMarker.style.height = `${window.innerHeight * 0.7 - navbar.clientHeight}px`;
+
 
 expandVidBtn.addEventListener("click", () => {
     if (expanded) {
         introVid.style.height = "70vh";
+        introVidMarker.style.height = `${window.innerHeight * 0.7 - navbar.clientHeight}px`;
         expandVidImg.src = "public/assets/images/expand-video.png";
         expandVidImg.alt = "Expand Video";
         expandVidImg.title = "Expand Video";
         expanded = false;
     } else {
         introVid.style.height = "100vh";
+        introVidMarker.style.height = `${window.innerHeight - navbar.clientHeight}px`;
         expandVidImg.src = "public/assets/images/shrink-video.png";
         expandVidImg.alt = "Shrink Video";
         expandVidImg.title = "Shrink Video";
