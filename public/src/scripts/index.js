@@ -12,7 +12,7 @@ const projects = await getProjects(locations.projects);
 projects.forEach(e => {
     const a = document.createElement("a");
 
-    a.href = `public/pages/project.html?src=projects&id=${e.id}`;
+    a.href = `pages/project.html?src=projects&id=${e.id}`;
     a.classList.add("carousel-item", "animated-button");
 
     const carouselItem = document.createElement("x-image-title-frame");
@@ -20,7 +20,7 @@ projects.forEach(e => {
     carouselItem.setAttribute("x-title", e.title);
     
     const img = document.createElement("img");
-    img.src = `public/${e.coverImage}`;
+    img.src = `${e.coverImage}`;
     img.alt = e.coverAlt;
     img.title = e.title;
 
@@ -42,21 +42,26 @@ const navbar = document.querySelector("#navbar");
 introVid.style.height = "70vh";
 introVidMarker.style.height = `${window.innerHeight * 0.7 - navbar.clientHeight}px`;
 
-
 expandVidBtn.addEventListener("click", () => {
     if (expanded) {
         introVid.style.height = "70vh";
         introVidMarker.style.height = `${window.innerHeight * 0.7 - navbar.clientHeight}px`;
-        expandVidImg.src = "public/assets/images/expand-video.png";
+        expandVidImg.src = "assets/images/expand-video.png";
         expandVidImg.alt = "Expand Video";
         expandVidImg.title = "Expand Video";
         expanded = false;
     } else {
         introVid.style.height = "100vh";
         introVidMarker.style.height = `${window.innerHeight - navbar.clientHeight}px`;
-        expandVidImg.src = "public/assets/images/shrink-video.png";
+        expandVidImg.src = "assets/images/shrink-video.png";
         expandVidImg.alt = "Shrink Video";
         expandVidImg.title = "Shrink Video";
         expanded = true;
     }
 });
+
+// env
+
+fetch("/api/config")
+    .then(res => res.json())
+    .then(data => console.log(data));
