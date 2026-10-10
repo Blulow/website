@@ -65,5 +65,8 @@ expandVidBtn.addEventListener("click", () => {
 const version = new URLSearchParams(window.location.search).get("version") || "public";
 fetch(`/api/content?version=${version}`)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+        const icon = document.querySelector("link[rel=\"shortcut icon\"]");
+        if (data.img) icon.href = data.img;
+    })
     .catch(err => console.error("Error loading version content:", err));
