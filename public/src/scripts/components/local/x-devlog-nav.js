@@ -66,8 +66,10 @@ class DevlogNav extends HTMLElement {
 
         const f = new URL(".", import.meta.url).href;
         const pages = new URL("../../../../pages", f).href;
-        prevBtn.href = prevDevlogId ? `${pages}/project.html?src=devlogs&id=${prevDevlogId}` : "";
-        nextBtn.href = nextDevlogId ? `${pages}/project.html?src=devlogs&id=${nextDevlogId}` : "";
+        const urlParams = new URLSearchParams(window.location.search);
+        const version = urlParams.get("version") ? `&version=${urlParams.get("version")}` : "";
+        prevBtn.href = prevDevlogId ? `${pages}/project.html?src=devlogs&id=${prevDevlogId}${version}` : "";
+        nextBtn.href = nextDevlogId ? `${pages}/project.html?src=devlogs&id=${nextDevlogId}${version}` : "";
     }
 }
 
