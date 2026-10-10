@@ -16,6 +16,22 @@ export async function getProjects(location) {
 
 export function addProject(data, container, src) {
     const project = new URL("../../../pages/project.html", f).href;
+    
+    const version = new URLSearchParams(window.location.search).get("version") || "public";
+    fetch(`/api/content?version=${version}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.img) {
+                document.querySelectorAll("x-project-frame")
+                .forEach(e => {
+                    if (e.getAttribute("x-src").includes("/Blulow.jpg")) {
+                        e.setAttribute("x-src", `${_public}${data.img}`)
+                    }
+                });
+            }
+        })
+        .catch(err => console.error("Error loading version content:", err));
+    
     container.innerHTML += `
         <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="${project}?src=${src}&id=${data.id}" x-src="${_public}${data.coverImage}" x-alt="${data.coverAlt}">
             ${data.description}
