@@ -13,7 +13,8 @@ class XHeader extends HTMLElement {
         fetch(`/api/content?version=${version}`)
             .then(res => res.json())
             .then(data => {
-                if (data.img) document.querySelector("#navbar-icon").src = assets + data.img.replace(/^assets\//, "/");
+                const r = new URL("../../../../", import.meta.url).href;
+                if (data.img) document.querySelector("#navbar-icon").src = r + data.img;
             })
             .catch(err => console.error("Error loading version content:", err));
             
