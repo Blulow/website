@@ -29,7 +29,7 @@ projects.forEach(e => {
     carousel.appendChild(a);
 });
 
-// video expanding
+// intro vid
 
 let expanded = false;
 
@@ -66,8 +66,14 @@ const version = new URLSearchParams(window.location.search).get("version") || "p
 fetch(`/api/content?version=${version}`)
     .then(res => res.json())
     .then(data => {
-        const icon = document.querySelector("link[rel=\"shortcut icon\"]");
-        const r = new URL("../../", import.meta.url).href;
-        if (data.img) icon.href = r + data.img;
+        if (data.img) {
+            const icon = document.querySelector("link[rel=\"shortcut icon\"]");
+            const r = new URL("../../", import.meta.url).href;
+            icon.href = r + data.img;
+
+            document.querySelector(".blu").textContent = data.blu;
+            document.querySelector(".low").textContent = data.low;
+        }
+
     })
     .catch(err => console.error("Error loading version content:", err));
