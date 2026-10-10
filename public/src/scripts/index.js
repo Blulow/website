@@ -73,6 +73,13 @@ fetch(`/api/content?version=${version}`)
 
             document.querySelector(".blu").textContent = data.blu;
             document.querySelector(".low").textContent = data.low;
+
+            carousel.querySelectorAll("x-image-title-frame").forEach(e => {
+                const img = e.querySelector("img");
+                if (img.src.includes("Blulow.jpg")) {
+                    img.src = r + data.img;
+                }
+            });
         }
 
     })
