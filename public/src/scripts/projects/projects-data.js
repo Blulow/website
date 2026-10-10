@@ -16,7 +16,6 @@ export async function getProjects(location) {
 
 export function addProject(data, container, src) {
     const project = new URL("../../../pages/project.html", f).href;
-    console.log(data.coverImage);
     container.innerHTML += `
         <x-project-frame class="section-project-frame" x-title="${data.title}" x-href="${project}?src=${src}&id=${data.id}" x-src="${_public}${data.coverImage}" x-alt="${data.coverAlt}">
             ${data.description}
