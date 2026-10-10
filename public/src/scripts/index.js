@@ -62,6 +62,8 @@ expandVidBtn.addEventListener("click", () => {
 
 // env
 
-fetch("/api/config")
+const version = new URLSearchParams(window.location.search).get("version") || "public";
+fetch(`/api/content?version=${version}`)
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => console.log(data))
+    .catch(err => console.error("Error loading version content:", err));
