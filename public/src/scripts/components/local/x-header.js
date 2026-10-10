@@ -22,7 +22,7 @@ class XHeader extends HTMLElement {
             <header>
                 <x-navbar id="navbar" aria-label="Navigation Menu">
                     <div class="animated-button logo home"><a class="nav-links nav-home-btn" href="${index}">
-                        <img id="navbar-icon" src="${assets}/images/Blulow.jpg" alt="Blulow logo">
+                        <img id="navbar-icon" src="${assets}/images/logo.png" alt="Blulow logo">
                         Home
                     </a></div>
                     <div class="animated-button"><a class="nav-links" href="${index}#about-me-marker">About</a></div>

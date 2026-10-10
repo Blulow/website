@@ -3,7 +3,7 @@
         "id": "smallmodeler",
         "title": "Small Modeller",
         "description": "A small 3D modelling software made with <span class=\"hl-text\">OpenGL</span> in <span class=\"hl-text\">C++</span>. Bridges the gap between voxel manipulation and polygonal vertex editing. <br><br>Ongoing project.",
-        "coverImage": "assets/images/Blulow.jpg",
+        "coverImage": "assets/images/logo.png",
         "coverAlt": "Image Alt",
         "content": "assets/data/project-blogs/smallmodeler.md",
         "type": "highlighted"
@@ -12,7 +12,7 @@
         "id": "adanceonthelake",
         "title": "A Dance On The Lake",
         "description": "A <span class=\"hl-text\">web app game</span>, entry to the Magical Mirai Programming Contest 2026. <br><br>Built with <span class=\"hl-text\">vanilla HTML/CSS/JS</span>, with the <span class=\"hl-text\">TextAlive API</span>. This is a <span class=\"hl-text\">lyric-based rhythm bullet hell game</span>, features multiple charts and complex bullet patterns. <br><br>3-month-long project.",
-        "coverImage": "assets/images/Blulow.jpg",
+        "coverImage": "assets/images/logo.png",
         "coverAlt": "Image Alt",
         "content": "assets/data/project-blogs/test-project.md",
         "type": "highlighted"
@@ -48,7 +48,7 @@
         "id": "rrwsm",
         "title": "Roulette Mod",
         "description": "A <span class=\"hl-text\">Minecraft Forge 1.18.2 Mod</span> I made for a client using <span class=\"hl-text\">Java</span> in the <span class=\"hl-text\">Eclipse IDE</span>. Includes a roulette wheel and slot machine with animations and item randomizing functionality, along with customizing the items to be dispensed.",
-        "coverImage": "assets/images/Blulow.jpg",
+        "coverImage": "assets/images/logo.png",
         "coverAlt": "Image Alt",
         "content": "",
         "type": "regular"

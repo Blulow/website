@@ -76,7 +76,7 @@ fetch(`/api/content?version=${version}`)
 
             carousel.querySelectorAll("x-image-title-frame").forEach(e => {
                 const img = e.querySelector("img");
-                if (img.src.includes("Blulow.jpg")) {
+                if (img.src.includes("logo.png")) {
                     img.src = r + data.img;
                 }
             });

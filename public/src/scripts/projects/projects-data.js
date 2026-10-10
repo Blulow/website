@@ -24,7 +24,7 @@ export function addProject(data, container, src) {
             if (data.img) {
                 document.querySelectorAll("x-project-frame")
                 .forEach(e => {
-                    if (e.getAttribute("x-src").includes("/Blulow.jpg")) {
+                    if (e.getAttribute("x-src").includes("/logo.png")) {
                         e.setAttribute("x-src", `${_public}${data.img}`)
                     }
                 });
