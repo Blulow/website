@@ -4,9 +4,7 @@ class Navbar extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
-
                 :host {
-                    --x-background-color: unset;
                     --x-padding-top: unset;
                     --x-padding-right: unset;
                     --x-padding-bottom: unset;
@@ -18,6 +16,8 @@ class Navbar extends HTMLElement {
                     --x-gap: unset;
                     --x-justify-content: unset;
                     --x-align-items: unset;
+                    --x-mob-bg-col: unset;
+                    transition: background-color 0.3s ease-in-out;
                 }
 
                 .nav-menu, .hamburger-wrapper {
@@ -75,6 +75,10 @@ class Navbar extends HTMLElement {
                 }
 
                 @media (max-width: 1024px) {
+                    :host(.active) {
+                        background-color: var(--x-mob-bg-col) !important;
+                    }
+
                     .hamburger-wrapper {
                         display: flex;
                     }
@@ -97,7 +101,7 @@ class Navbar extends HTMLElement {
                     }
 
                     ::slotted(li:not([slot="home"])) {
-                        background-color: var(--x-background-color);
+                        background-color: var(--x-mob-bg-col);
                         box-sizing: border-box;
                         --padding-gap: calc(var(--x-gap) / 2);
                         padding: var(--padding-gap) var(--x-padding-right) var(--padding-gap) var(--x-padding-left) !important;
@@ -164,6 +168,7 @@ class Navbar extends HTMLElement {
         const barDist = bars[1].offsetTop - bars[0].offsetTop;
 
         const navMenu = this.shadowRoot.querySelector(".nav-menu");
+        const navbar = this.shadowRoot.host;
         
         const slot = this.shadowRoot.querySelector("slot:not([name=\"home\"])");
         const lis = slot.assignedElements();
@@ -172,7 +177,10 @@ class Navbar extends HTMLElement {
             hamburger.classList.toggle("active");
             
             navMenu.classList.toggle("active");
-            
+            if (navbar.classList.contains("active")) navbar.style.transitionDelay = lis.length * 0.1 + "s";
+            else navbar.style.transitionDelay = "0s";
+            navbar.classList.toggle("active");
+
             lis.forEach((e, i) => {
                 if (e.classList.contains("active")) e.style.transitionDelay = (lis.length - i) * 0.1 + "s"; 
                 else e.style.transitionDelay = i * 0.1 + "s";

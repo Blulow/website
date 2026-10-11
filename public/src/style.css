@@ -3,6 +3,7 @@
     --txt-col: #ffffff;
     --hl-txt-col: #38ff29;
     --nav-col: #2262944f;
+    --nav-mob-col: #0f2e4686;
     --sec-bg-col: #47422e;
     --sec-head-col: #948647;
     --sub-col: #477d94;
@@ -57,7 +58,7 @@ body {
     width: 100%;
     position: fixed;
     background-color: var(--nav-col);
-    --x-background-color: var(--nav-col);
+    --x-mob-bg-col: var(--nav-mob-col);
     --x-padding-top: 1rem;
     --x-padding-right: 2rem;
     --x-padding-bottom: 1rem;
@@ -86,6 +87,17 @@ body {
     text-decoration: none;
     font-size: 2rem;
 }
+
+@media (max-width: 1024px) {
+    #navbar {
+        --x-gap: 5vh;
+    }
+
+    .nav-links:not(.nav-home-btn) {
+        font-size: 5vh;
+    }
+}
+
 
 .logo {
     height: 80%;
