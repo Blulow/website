@@ -37,6 +37,10 @@ class ImageTitleFrame extends HTMLElement {
                     color: var(--x-title-col);
                     padding: var(--x-title-padding-top) var(--x-title-padding-right) var(--x-title-padding-bottom) var(--x-title-padding-left);
                 }
+
+                @media (max-width: 1024px) {
+                
+                }
             </style>
             <slot></slot>
             <h3 class="carousel-item-title"></h3>
