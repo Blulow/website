@@ -57,10 +57,15 @@ body {
     width: 100%;
     position: fixed;
     background-color: var(--nav-col);
+    --x-background-color: var(--nav-col);
     --x-padding-top: 1rem;
     --x-padding-right: 2rem;
     --x-padding-bottom: 1rem;
     --x-padding-left: 2rem;
+    --x-hamburger-padding-top: 0;
+    --x-hamburger-padding-right: 0;
+    --x-hamburger-padding-bottom: 0;
+    --x-hamburger-padding-left: 0;
     --x-gap: 3rem;
     --x-justify-content: right;
     transform: translateY(-100%);
