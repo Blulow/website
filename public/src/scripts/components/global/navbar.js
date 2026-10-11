@@ -89,6 +89,11 @@ class Navbar extends HTMLElement {
                         gap: 0;
                         width: 100%;
                         text-align: right;
+                        pointer-events: none;
+                    }
+
+                    .nav-menu.active {
+                        pointer-events: auto;
                     }
 
                     ::slotted(li:not([slot="home"])) {
@@ -157,12 +162,16 @@ class Navbar extends HTMLElement {
         const hamburger = this.shadowRoot.querySelector(".hamburger");
         const bars = hamburger.children;
         const barDist = bars[1].offsetTop - bars[0].offsetTop;
+
+        const navMenu = this.shadowRoot.querySelector(".nav-menu");
         
         const slot = this.shadowRoot.querySelector("slot:not([name=\"home\"])");
         const lis = slot.assignedElements();
         hamburger.style.setProperty("--bar-dist", barDist + "px");
         hamburger.addEventListener("click", () =>  {
             hamburger.classList.toggle("active");
+            
+            navMenu.classList.toggle("active");
             
             lis.forEach((e, i) => {
                 if (e.classList.contains("active")) e.style.transitionDelay = (lis.length - i) * 0.1 + "s"; 
@@ -175,7 +184,6 @@ class Navbar extends HTMLElement {
         // hamburger nav position
 
         const hamburgerWrapper = this.shadowRoot.querySelector(".hamburger-wrapper");
-        const navMenu = this.shadowRoot.querySelector(".nav-menu");
         navMenu.style.setProperty("--nav-height", hamburgerWrapper.clientHeight + "px");
     }
 }
