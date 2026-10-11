@@ -16,7 +16,6 @@ fetch(`/api/content?version=${version}`)
     .then(res => res.json())
     .then(data => {
         const icon = document.querySelector("link[rel=\"shortcut icon\"]");
-        console.log(icon);
         const r = new URL("../../../", import.meta.url).href;
         if (data.img) icon.href = r + data.img;
     })
