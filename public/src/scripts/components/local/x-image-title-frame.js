@@ -18,9 +18,9 @@ class ImageTitleFrame extends HTMLElement {
                 }
                 
                 ::slotted(img) {
-                    display: block;
-                    width: 100%;
-                    height: auto;
+                    display: inline-block;
+                    height: 100%;
+                    width: auto;
                 }
                     
                 .carousel-item-title {

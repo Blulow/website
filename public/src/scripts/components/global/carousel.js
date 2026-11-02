@@ -39,6 +39,7 @@ class Carousel extends HTMLElement {
                 
                 .carousel-track {
                     height: 90%;
+                    width: 100%;
                     flex: 1 1 auto;
                     display: flex;
                     gap: var(--x-gap);
