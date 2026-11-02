@@ -1,14 +1,17 @@
-import sheet from "../../../style.css" with { type: "css" };
-
 class Section extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
+                * {
+                    margin: 0;
+                }
+
                 :host {
                     --x-sec-head-col: unset;
                     --x-title-font-size: unset;
+                    --x-description-font-size: unset;
                     --x-text-align: unset;
                     --x-flex-direction: unset;
                     --x-heading-padding-top: unset;
@@ -27,13 +30,14 @@ class Section extends HTMLElement {
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
                     --x-content-padding-left: unset;
+                    --x-justify-content: unset;
                     --x-align-items: unset;
 
                     display: block;
                 }
 
                 .section-heading {
-                    background-color: var(--sec-head-col);
+                    background-color: var(--x-sec-head-col);
                     text-align: var(--x-text-align);
                     padding: var(--x-heading-padding-top) var(--x-heading-padding-right) var(--x-heading-padding-bottom) var(--x-heading-padding-left);
                 }
@@ -66,8 +70,6 @@ class Section extends HTMLElement {
                 </div>
             </div>
         `;
-
-        this.shadowRoot.adoptedStyleSheets = [sheet];
 
         this.attachInternals().role = "region";
     }

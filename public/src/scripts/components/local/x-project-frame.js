@@ -1,11 +1,14 @@
-import sheet from "../../../style.css" with { type: "css" };
-
 class ProjectFrame extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+
                 :host {
                     --x-txt-col: unset;
                     --x-text-align: unset;
@@ -82,8 +85,6 @@ class ProjectFrame extends HTMLElement {
                 <p class="frame-description"><slot></slot></p>
             </div>
         `;
-        
-        this.shadowRoot.adoptedStyleSheets = [sheet];
     }
 
     static get observedAttributes() {
