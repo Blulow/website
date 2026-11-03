@@ -288,16 +288,18 @@ body {
     width: 100%;
     --x-blog-bg-col: var(--blog-col);
     --x-blog-width: 80%;
-    --x-title-font-size: 10vw;
+    --x-title-font-size: 7vw;
     --x-title-padding-top: 2rem;
     --x-title-padding-right: 0;
-    --x-title-padding-bottom: 2vw;
+    --x-title-padding-bottom: 1vw;
     --x-title-padding-left: 0;
+    --x-content-font-size: clamp(1.2rem, 2vw, 1.8rem);
     --x-content-padding-top: 1rem;
     --x-content-padding-right: 5vw;
     --x-content-padding-bottom: 5rem;
     --x-content-padding-left: 5vw;
     --x-content-hl-text-col: var(--hl-txt-col);
+    --x-a-color: #fff834;
 }
 
 /* section */

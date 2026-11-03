@@ -14,11 +14,13 @@ class Blog extends HTMLElement {
                     --x-title-padding-right: unset;
                     --x-title-padding-bottom: unset;
                     --x-title-padding-left: unset;
+                    --x-content-font-size: unset;
                     --x-content-padding-top: unset;
                     --x-content-padding-right: unset;
                     --x-content-padding-bottom: unset;
                     --x-content-padding-left: unset;
                     --x-content-hl-text-col: unset;
+                    --x-a-color: unset;
 
                     display: flex;
                     justify-content: center;
@@ -37,8 +39,12 @@ class Blog extends HTMLElement {
                 }
                 
                 .content {
-                    font-size: 1.2rem;
+                    font-size: var(--x-content-font-size);
                     padding: var(--x-content-padding-top) var(--x-content-padding-right) var(--x-content-padding-bottom) var(--x-content-padding-left);
+                }
+
+                .content a {
+                    color: var(--x-a-color);
                 }
 
                 blockquote {
